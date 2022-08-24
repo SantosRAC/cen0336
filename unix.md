@@ -195,7 +195,7 @@ fd2ps    fdesign  fdformat fdlist   fdmount  fdmountd fdrawcmd fdumount
 
 #### Curingas
 
-You can use wildcards when referring to files.  `*` stands for zero or more characters.  `?` stands for any single character.  For example, to list all files with the extension ".txt", run `ls` with the wildcard pattern "*.txt"
+Você pode utilizar coringas ao se refeir aos arquivos.  `*` stands for zero or more characters.  `?` stands for any single character.  For example, to list all files with the extension ".txt", run `ls` with the wildcard pattern "*.txt"
 
 ```
 (~) 56% ls -F *.txt
