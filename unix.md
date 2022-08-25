@@ -16,15 +16,15 @@ Por que é importante para profissionais das ciências da vida aprender a progra
 
 Possivelmente você já tem a resposta a essa pergunta, a final das contas, você está aqui!
 
-Estmaos convencidos que saber programar é tão essencial quanto fazer uma electroforese em gel o preparar uma reação de PCR. Os dados que hoje podemos obter de um só experimento podem ser esmagadores. i Esse dados muitas vezes precisam ser reformatados, filtrados e analizados de formas únicas. A programação de computadores permitirá que você execute essas taferas de uma maneira **eficiente** e **reproducivel**.
+Estamos convencidos que saber programar é tão essencial quanto fazer uma eletroforese em gel ou preparar uma reação de PCR. Os dados que hoje podemos obter de um só experimento podem ser esmagadores. Esses dados muitas vezes precisam ser reformatados, filtrados e analisados de formas únicas. A programação de computadores permitirá que você execute essas tarefas de uma maneira **eficiente** e **reprodutível**.
 
 
 ## Dicas úteis
 
-Algumas dicas para cursar uma disciplina de programação com sucesso
+Algumas dicas para cursar uma disciplina de programação com sucesso:
 
 
-1. Pratica, pratica, pratica. Por favor, invista tnato tempo como seja possivel escrevendo código.
+1. Pratica, pratica, pratica. Por favor, invista tanto tempo como seja possivel escrevendo código.
 
 2. Limite-se a escrever uma linha ou duas de codigo, e teste-las. Se você escreve muitas linhas, será mais dificil corregir os erros (debug), caso tiver.
 
@@ -48,11 +48,11 @@ Algumas dicas para cursar uma disciplina de programação com sucesso
 
 #### O que é a linha de comandos?
 
-Subjacente a qualsquer interface gráfica (GUI) existe um poderoso sistema operacional (SO) de linha de comandos. A linha de comandos oferece acesso ao interior do SO, e é também uma forma conveniente de escrever software e scripts personalizados.
+Subjacente a quaisquer interfaces gráficas (GUI) existe um poderoso sistema operacional (SO) de linha de comandos. A linha de comandos oferece acesso ao interior do SO, e é também uma forma conveniente de escrever software e scripts personalizados.
 
-Muitas das ferramentas bioinformáticas são desenvolvidas para ser executadas na linha de comando e não ter uma GUI. Em muitos casos, uma ferramenta na linha de comandos e mais versatil que uma ferramente gráfica, já que você pode combinar facilmente diversas ferramentas de linha de comandos para criar scripts que realizem tarefas sem a intervenção de um humano.
+Muitas das ferramentas bioinformáticas são desenvolvidas para serem executadas na linha de comando e não ter uma GUI. Em muitos casos, uma ferramenta na linha de comandos é mais versátil que uma ferramente gráfica, já que você pode combinar facilmente diversas ferramentas de linha de comandos para criar scripts que realizem tarefas sem a intervenção de um humano.
 
-Nesta disciplinas, vocês escreverão scripts na linguagem Python e os executarão exclusivamente desde uma linha de comandos.
+Nesta disciplina, vocês escreverão scripts na linguagem Python e os executarão exclusivamente de uma linha de comandos.
 
 ### O básico
 
