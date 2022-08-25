@@ -323,7 +323,7 @@ DESCRIPTION
 ...
 ```
 
-#### Encontrando quais comandos estão disponiveís no seu computador
+#### Encontrando quais comandos estão disponíveis no seu computador
 
 O comando `apropos` procurará comando que batem com uma palavra chave ou uma frase. Aqui tem um exemplo usando a palavra chave 'column'
 
@@ -343,7 +343,7 @@ modes
 Muitos comandos aceitam argumentos.  Frequentemente os argumentos são os nomes de um ou mais arquivos nos quais o comando fará alguma operação. Muitos comandos também aceitam "switches" ou 'opções' na linha de comandos, que podem ajustar de forma fina o que o comando faz.  Alguns comandos reconhecem "switches' curtos, isto é, que consistem de um sinal de menos `-` seguido de um único caracter, enquanto outros reconhecem 'switches' longos, que consistem de dois sinais de menos `--` seguidos de uma palavra inteira.
 
 
-O programa `wc` (word count) é um exemplo de comando que reconhece tanto opções longas como curtas. Você pode pasar as opções `-c`,  `-w` e/ou `-l` para contar caracteres, palavras e linhas num arquivo de texto, respectivamente. Ou você podde usar o formato mais longo das opções, mais facil de ler, `--chars`,  `--words` ou `--lines` .  Os proximos dois exemplos contam o número de caracteres e de linhas no arquivo de texto  `/var/log/messages`:
+O programa `wc` (word count) é um exemplo de comando que reconhece tanto opções longas como curtas. Você pode passar as opções `-c`,  `-w` e/ou `-l` para contar caracteres, palavras e linhas num arquivo de texto, respectivamente. Ou você pode usar o formato mais longo das opções, mais fácil de ler, `--chars`,  `--words` ou `--lines` .  Os próximos dois exemplos contam o número de caracteres e de linhas no arquivo de texto  `/var/log/messages`:
 
 ```
 (~) 102% wc -c -l /var/log/messages
@@ -361,15 +361,15 @@ Você pode agrupar switches curtos, concatenando-lhes, como se mostra neste exem
 
 Muitos comandos mostrarão um pequeno resumo da forma de uso quando você chamar com as opções -h` ou `--help.
 
-#### Espaços e caracteres extranhos
+#### Espaços e caracteres estranhos
 
-A shell usa espaços em branco (espaços, tabs, e outros catacteres não imprimíveis) para separar argumentos.  Se você deseja usar espeçoes em branco em um argumento, tem que usar aspas simples ao redor dele. For Exemplo: 
+A shell usa espaços em branco (espaços, tabs, e outros catacteres não imprimíveis) para separar argumentos.  Se você deseja usar espaços em branco em um argumento, tem que usar aspas simples ao redor dele. For Exemplo: 
 
 ```
 mail -s 'Uma mensagem importante' 'Bob Ghost <bob@ghost.org>'
 ```
-Esse comando enviará uma mensage de e-mail para a pessoa fictisia Bob Ghost.  O switch `-s` aceita um argumento, que será o tema do e-mail.  Já que o tema desejado pode conter espaçoes, tem que usar aspas ao redor. De forma semelantes, meu nome e endereço de e-mail, que poden ter espeçoes, tem que usar aspas da mesma forma. 
 
+Esse comando enviará uma mensagem de e-mail para a pessoa fictícia Bob Ghost. O switch `-s` aceita um argumento, que será o tema do e-mail. Já que o tema desejado pode conter espaços, tem que usar aspas ao redor. De forma semelhante, meu nome e endereço de e-mail, que podem ter espeços, têm que usar aspas da mesma forma. 
 
 Alguns caracteres especiais não imprimíveis têm _códigos de escape_ associados
 
@@ -389,7 +389,7 @@ Aqui tem alguns comandos que são usados com muita frequência.  Pode usar o com
 
 #### Manipulando pastas
 
-| Comando | Descripção                              |
+| Comando | Descrição                              |
 | ------- | ---------------------------------------- |
 | `ls`    | Mostrar em forma de lista o conteúdo de uma pasta. O uso mais frequente é como  `ls -F` (lista decorada), `ls -l` (lista larga), `ls -a` (listar todos os arquivos). |
 | `mv`    | Renomear ou mover um arquivo ou pasta.      |
@@ -398,15 +398,15 @@ Aqui tem alguns comandos que são usados com muita frequência.  Pode usar o com
 | `mkdir` | Criar uma pasta.                         |
 | `rmdir` | Apagar uma pasta.                       |
 | `ln`    | Criar um vínculo simbólico ou rigido.          |
-| `chmod` | Mudar as permisões de um arquivo ou uma pasta. |
+| `chmod` | Mudar as permissões de um arquivo ou uma pasta. |
 
 
-| Command           | Description                              |
+| Comando           | Descrição                              |
 | ----------------- | ---------------------------------------- |
-| `cat`             | Programa para concatenar.  Pode ser usado para concatenar multiplos arquivos em um único arquivo, ou, com maior frequencia, para visualizar o conteúdo de um ou varios arquivo no terminal.|
+| `cat`             | Programa para concatenar. Pode ser usado para concatenar múltiplos arquivos em um único arquivo, ou, com maior frequencia, para visualizar o conteúdo de um ou varios arquivo no terminal.|
 | `echo`            | Imprime na tela uma copia de algum texto. E.g. `echo 'Hola Mundo!'` |
 | `more`            | Navegar num arquivo pagina a pagina; Muito útil para visualizar o conteúdo de arquivos grandes. Funciona inclusive com arquivos que nem sequer podem ser visualizados num editor de texto. |
-| `less`            | É uma versão do comando more, com ainda mais recursos..  |
+| `less`            | É uma versão do comando more, com ainda mais recursos.  |
 | `head`            | Visualizar as primeiras linhas de um arquivo. Você pode controlar quantas linhas visualizar. |
 | `tail`            | Vizualizar o final de um arquivo.  Você pode controlar quantas linhas visualizar.  Pode usar  `tail -f` para visualizar um arquivo onde está escrevendo. |
 | `wc`              | contar palavras, linhas e/ou characteres em um ou mais arquivos. |
@@ -431,20 +431,20 @@ Aqui tem alguns comandos que são usados com muita frequência.  Pode usar o com
 | `ping`                 | Conferir se um servidor remoto está ligado.              |
 | `ftp`/ `sftp` (secure) | Transferir arquivos com o protocolo de transferencia de arquivos (File Transfer Protocol). |
 
-#### Entrada/Salida (E/S) padrão e redirecionamento
+#### Entrada/Saída (E/S) padrão e redirecionamento
 
 
-Os comandos de Unix se comumicam via a interfaz de linha de comandos.  eles podem imprimir informacão no terminal para voc^visualizar, e também podem aceitar entradas desde o teclado (o seja, de  _você_!)
+Os comandos de Unix se comumicam via a interface de linha de comandos. Eles podem imprimir informacão no terminal para você visualizar e também podem aceitar entradas desde o teclado (o seja, de  _você_!)
 
 
 Cada programa de Unix inicia com três conexoes ao mundo exterior.  Essas conexões são chamadas de "correntes" ou "streams", porque agem como se fosem uma corrente de informacão(metaforicamente falando):
 
 
-| Tipo de Corrente     | Descripcão                              |
+| Tipo de Corrente     | Descrição                              |
 | --------------- | ---------------------------------------- |
 | Entrada padrão  | É uma corrente de comunicacões inicialmente atrelada ao teclado. Quando o programa lê da entrada padrão, ele lê qualquer cosa que você digitar. |
 | saída padrão | Esta corrente está inicialmente atrelada ao terminal. Qualquer coisa que o programa imprimir nesta cenal aparecerá na sua janela do terminal. |
-| Erro padrão  | Esta corrente est;a, também, inicialmente atrelada ao terminal. É um canal separado com o intuito de imprimir messages de erro. |
+| Erro padrão  | Esta corrente esta, também, inicialmente atrelada ao terminal. É um canal separado com o intuito de imprimir messages de erro. |
 
 La palavra "inicialmente" tem que levar a pensar que os padrões de entradas, saida e de erro, podem de alguma forma ser desatrelados de seus locais de inicio, e atrelados a algum outro. Isso é correto! Você pode atrelar uma o mais dessas correntes a um arquivo, ou incluso a um outro programa.  Isso pode parecer esoterico, mas é na verdade muito útil.
 
