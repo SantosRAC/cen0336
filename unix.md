@@ -74,17 +74,17 @@ De _**qualquer SO – Online no navegador**_:
 
 Durante a disciplina vamos usar muito esse terminal.
 
-#### OK. Entrei no servidor. E agora?
+#### OK. Estou no terminal. E agora?
 
 A janela da terminal está executando uma **shell** chamada de "bash." A shell é um loop (ciclo) que:  
 1. Imprime o prompt
 2. Lê uma linha de entrada do teclado
 3. Analisa a linha em um ou mais comandos
-4. Executa os comandos (geralmente imprimindo algum tipo de daida na terminal)
+4. Executa os comandos (geralmente imprimindo algum tipo de saida no terminal)
 5. Volta ao passo 1.
 
 
-Existem muitas shells diferentes, com nomes bizarros como **bash**, **sh**, **csh**, **tcsh**, **ksh**, e **zsh**.  A particula "sh" no nome, significa shell.  Cada shell é sutilmente diferente e algumas vezes confusa. suas contas no servidor estão configuradas para usar a shell **bash**.
+Existem muitas shells diferentes, com nomes bizarros como **bash**, **sh**, **csh**, **tcsh**, **ksh**, e **zsh**.  A particula "sh" no nome, significa shell. Cada shell é sutilmente diferente e algumas vezes confusa.
 
 
 #### Prompt da linha de comandos
@@ -112,6 +112,12 @@ Mais um:
 dria@cen0336 1:12PM>
 ```
 
+Outro:
+
+```
+[renato.santos@frontend Pvi]$
+```
+
 O que você vai ter como prompt depende de como o administrador do sistema fez a configuração. Mas, você pode mudá-lo, [claro depois de saber como!](https://linuxconfig.org/bash-prompt-basics).
 
 O prompt indica à shell que está pronto para aceitar comandos. Quando um programa esta rodando, o prompt não aparece até que o sistema estiver pronto para lidar com uma nova solicitação.
@@ -135,10 +141,10 @@ ccod/
 (~) 54%
 ```
 
-O comando aqui é `ls -F`, que gera uma lista dos arquivos e pastas dentro da pasta atual (já falaremos disso). Abaixo do comando aparece sua saída, é o prompt aparece novamente.
+O comando aqui é `ls -F`, que gera uma lista dos arquivos e pastas dentro da pasta atual (já falaremos disso). Abaixo do comando aparece sua saída, e o prompt aparece novamente.
 
 
-Alguns programas podem demorar muito tempo para rodar. Depois que você executa eles, não recuperará o prompt da shell até eles terminarem a tarefa que les foi encomendada. Nesse caso você poderia abrir um novo terminal par acontinuar seus trabalhos, ou rodar o comando no segundo plano adicionando o simbolo "&" após o comando, no final da linha.
+Alguns programas podem demorar muito tempo para rodar. Depois que você executa eles, não recuperará o prompt da shell até eles terminarem a tarefa que lhes foi encomendada. Nesse caso você poderia abrir um novo terminal para continuar seus trabalhos ou rodar o comando no segundo plano adicionando o simbolo "&" após o comando, no final da linha.
 
 ```
 (~) 54% long_running_application &
@@ -160,14 +166,14 @@ A maioria das shells permite editar a linha de comandos.  Até o momento em que 
 - _control-y (^y)_: Colar o conteúdo do "kill buffer" na linha de comandos, no ponto onde estiver o cursor.  y=yank.
 - _zata acima_, _zeta abaixo_: Move o cursor para acima e para abaixo na historia de comandos.  Muito útil para rodar comandos que já foram rodados, possivelmente depois de modificá-los.
 
-Tem também algun comando úteis da shell que você pode usar:
+Tem também alguns comandos úteis da shell que você pode usar:
 
 - `history` Mostra todos os comandos que você usour recentemente, numerados.
 - `!<number>` Executar novamente um comando, baseado no seu número na historia (Você pode obter o número com o comando `history`).
 - `!!` Executar novamente o comando imediatamente anterior.
-- `!<piedaço de um comando>`: Executar novamente um comando anterior que comeãba como as letras indicadas.  Por exemplo, `!l` (a letra 'ele', não o número 1) executará novamente o comando `ls -F` que usamos no inicio deste capítulo.
+- `!<pedaço de um comando>`: Executar novamente um comando anterior que começava como as letras indicadas.  Por exemplo, `!l` (a letra 'ele', não o número 1) executará novamente o comando `ls -F` que usamos no inicio deste capítulo.
 
-A shell **bash** oferece as os serviçoes de auto-completar e correção ortográfica. Se você escreve parte de um comando e usa a tecla de tabulação, a shell mostrará para você todas as formas possiveis de completar o comando.  Por exemplo:
+A shell **bash** oferece os serviçoes de auto-completar e correção ortográfica. Se você escreve parte de um comando e usa a tecla de tabulação, a shell mostrará para você todas as formas possiveis de completar o comando.  Por exemplo:
 
 ```
 (~) 51% fd<tab><tab>
@@ -175,11 +181,11 @@ A shell **bash** oferece as os serviçoes de auto-completar e correção ortogr�
 fd2ps    fdesign  fdformat fdlist   fdmount  fdmountd fdrawcmd fdumount
 (~) 51%
 ```
-> Se você teclear tab após escrever um comando, mas antes de pressionar a tecla \<Enter\>, **bash** mostratá un lista de nomes de arquivos. Isto acontece por que muito comandos operam em arquivos.
+> Se você teclar tab após escrever um comando, mas antes de pressionar a tecla \<Enter\>, **bash** mostrará uma lista de nomes de arquivos. Isto acontece porque muito comandos operam em arquivos.
 
-#### Curingas
+#### Coringas
 
-Você pode utilizar coringas ao se refeir aos arquivos.  `*` stands for zero or more characters.  `?` stands for any single character.  For example, to list all files with the extension ".txt", run `ls` with the wildcard pattern "*.txt"
+Você pode utilizar coringas ao se referir aos arquivos.  `*` stands for zero or more characters.  `?` stands for any single character.  For example, to list all files with the extension ".txt", run `ls` with the wildcard pattern "*.txt"
 
 ```
 (~) 56% ls -F *.txt
@@ -187,7 +193,7 @@ final_exam_questions.txt  genomics_problem.txt
 genebridge.txt            mapping_run.txt
 ```
 
-Existem padr"oes mais avanzados de curingas, poder ler sobre eles na página de manual do **tcsh**.  Por exemplo, se você quer selecionar os arquivos que comencam com os caracteres  "f" ou "g" e que terminam com  ".txt", pode usar uma faixa de caracteres dentro de colchetes `[f-g]` como parte de seu curinga. Aqui tem um exemplo
+Existem padrões mais avançados de coringas, poder ler sobre eles na página de manual do **tcsh**.  Por exemplo, se você quer selecionar os arquivos que começam com os caracteres "f" ou "g" e que terminam com ".txt", pode usar uma faixa de caracteres dentro de colchetes `[f-g]` como parte de seu coringa. Aqui tem um exemplo:
 
 ```
 (~) 57% ls -F [f-g]*.txt
@@ -197,11 +203,11 @@ final_exam_questions.txt  genebridge.txt            genomics_problem.txt
 #### Lar doce lar
 
 
-Quando você entra no servidor, chegará numa parte do sistema que é sua pasta pessoal, chamada de _home directory_.  Você pode fazer oque você quiser nessa area: pode criar e apagar arquivos e outras pastas. De forma geral, você não pode criar arquivos em outras pastas do sistema.
+Quando você entra no terminal, chegará numa parte do sistema que é sua pasta pessoal, chamada de _home directory_.  Você pode fazer o que você quiser nessa área: pode criar e apagar arquivos e outras pastas. De forma geral, você não pode criar arquivos em outras pastas do sistema.
 
-Sua pasta home está localizada dentro sistema de arquivos do servidor. Neste servidor, como na maioria dos sistemas Linux e muitos Unixes, esta pasta tem seu nome de usuário, e eatá localizada em `/home`. A rota completa é `/home/usuário`.  A shell permite abreviá-lo como `~usuário` (onde usuário é seu nome de usuário no sistema), ou simplesmente como `~`. Esse caractere bizarro é chamado de "til" ou "twiddle".
+Sua pasta home está localizada dentro sistema de arquivos da máquina (poderia ser um servidor, por exemplo). Nela, como na maioria dos sistemas Linux e muitos Unixes, esta pasta tem seu nome de usuário, e está localizada em `/home`. A rota completa é `/home/usuário`.  A shell permite abreviá-lo como `~usuário` (onde usuário é seu nome de usuário no sistema), ou simplesmente como `~`. Esse caractere é chamado de "til" ou "twiddle".
 
-Para ver o que vovê tem na sua pasta home, execute os comandos:
+Para ver o que você tem na sua pasta home, execute os comandos:
 
 ```
 (~) % cd ~/
@@ -214,7 +220,7 @@ INBOX         Mail         News         nsmail       public_html
 
 Qual é a difereça entre os comandos `ls -F` e `ls`?
 
-Este comando mostra um arquivo "INBOX" e quatro pasta adicionais ("Mail", "News").  (A particula `-F` no comando liga a opção para saida sofisticada ('fancy'), que acrescente alguna caracteres especiais nas listas de pastas, para ajudá-lo na identificação do que está observando.  O simbolo `/` no final do nome de um arquivo indica que o arquivo é uma pasta.
+Este comando mostra um arquivo "INBOX" e quatro pastas adicionais ("Mail", "News").  (A particula `-F` no comando liga a opção para saida sofisticada ('fancy'), que acrescente alguna caracteres especiais nas listas de pastas, para ajudá-lo na identificação do que está observando.  O simbolo `/` no final do nome de um arquivo indica que o arquivo é uma pasta.
 
 
 Algumas pastas podem ter arquivos e outras pastas que não aparacem quando executa o comando `ls -F`, eles estão ocultos. Os nomes desses aquivos e pastas ocultos iniciam com um `.` ("ponto") . Para conseguir ver esses arquivos e pastas, tem que acrescentar uma `a` nas opções do comando `ls`:
@@ -234,7 +240,7 @@ Algumas pastas podem ter arquivos e outras pastas que não aparacem quando execu
 #### Conhecendo o sistema de arquivos
 
 
-Você pode se deslocar de uma pasta para outra usando o comando `cd`. Você só tem que dar o nome da pasta para onde você quer ir. Pode usar o comando  `pwd`para saber onde vocês está. Em algumas configurações o prompt também informa o nome da pasta onde você está.
+Você pode se deslocar de uma pasta para outra usando o comando `cd`. Você só tem que dar o nome da pasta para onde você quer ir. Pode usar o comando `pwd`para saber onde você está. Em algumas configurações o prompt também informa o nome da pasta onde você está.
 
 ```
 (~/docs/grad_course/i) 56% cd
@@ -266,7 +272,7 @@ bass-1.30a/                zhmapper.tar.gz
 bass-1.30a.tar.gz
 (~/News) 64%
 ```
-> Cada pasta tem duas pastas especiais chamadas de `.` e `..`. A primeira, `.` refere-se sempre ao diretório atual. `..` refere-se ao diretorio pai.  Desta forma você pode se deslocar para cima na hierarquia de diretórios:
+> Cada pasta tem duas pastas especiais chamadas de `.` e `..`. A primeira, `.` refere-se sempre ao diretório atual. `..` refere-se ao diretório pai. Desta forma você pode se deslocar para cima na hierarquia de diretórios:
 
 ```
 (~/Mail) 64% cd ..
@@ -280,7 +286,7 @@ e pode fazer coisas arbitrariamente bizarras como esta:
 > O ultimo comando sobe dois niveis, e logo vai na pasta Mail que está dentro da pasta chamada `dria`.
 
 
-Se você ficar perdido no sistema de arquivos, o comando `pwd` imprimira a rota completa da pasta onde você está:
+Se você ficar perdido no sistema de arquivos, o comando `pwd` imprimirá o caminho completo da pasta onde você está:
 
 ```
 (~) 56% pwd
@@ -290,7 +296,7 @@ Se você ficar perdido no sistema de arquivos, o comando `pwd` imprimira a rota 
 #### Comandos essenciais de Unix
 
 
-Com exceção de poucos comandos que estão construidos diretamente na shell, todos os comandos de linux são programas executaveis autónomos. Quando você escreve um comando, a shell buscará em todas as pastas listadas na variavel de ambiente PATH por um executavel com o mesmo nome. Se acha-lo, então a shell o executará. Se não, imprimirá o erro "command not found".
+Com exceção de poucos comandos que estão construídos diretamente na shell, todos os comandos de linux são programas executáveis autônomos. Quando você escreve um comando, a shell buscará em todas as pastas listadas na variavel de ambiente PATH por um executavel com o mesmo nome. Se acha-lo, então a shell o executará. Se não, imprimirá o erro "command not found".
 
 A maioria dos comandos estão em `/bin`, `/usr/bin`, ou `/usr/local/bin`.
 
