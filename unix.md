@@ -56,37 +56,21 @@ Nesta disciplina, vocês escreverão scripts na linguagem Python e os executarã
 
 ### O básico
 
-#### Detalhes para entrar no seu ambiente de trabalho
+#### Formas de acessar o terminal do Linux
 
-Nesta disciplina, neste semestre, usaremos um servidor Linux com CenOS 7, o endereço (IP), e porta de acesso, do servidor serão informados durante um dos encontros com o professor, por favor tome nota dessa informação e mantenha-la para uso rápido.
+Se você tem _**Windows 10**_:
 
-Para entrar no servidor, você tem que fornecer seu nome de usuário e a senha. Seu nome de usuário será a primeira letra do seu nome e as três primeiras letras do seu sobrenome. No sistema e-Disciplinas da USP tem uma tabela com os nomes de usuários de todos os alunos. A senha é CEN0336XXX, onde XXX são os três ultimos digitos do seu número USP.
+ * Instalar Windows Subsystem for Linux, pode escolher entre algumas distribuições de Linux https://docs.microsoft.com/pt-br/windows/wsl/install
+ * Usar uma máquina virtual, e.g., VirtualBox, você escolhe qualquer distribuição de Linux (usamos Lubuntu na sala de aula) https://itsfoss.com/install-linux-in-virtualbox/
+ * DualBoot installation: https://itsfoss.com/install-ubuntu-1404-dual-boot-mode-windows-8-81-uefi/
 
-Por exemplo, para o Prof. Diego Riano, o nome de usuário é: dria.
+Se você tem _**MacOS**_:
 
-_Your username:_ dria
+ * Já tem um sistema operacional baseado em UNIX, é só usar o terminal
+ * Se você quer ter Linux, pode usar uma máquina virtual
 
-_Your password:_ CEN0336XXX
-
-#### Conectando-se ao servidor
-
-Para conectar ao servidor precisarão de um cliente de SSH (Secure shell). 
-
-Os usuários de windows podem descarregar os software [Putty](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html)
-
-Os usuários de Linux ou de MacOS, já tem um cliente de ssh no sistema operacional, só tem que iniciar o aplicativo Terminal.
-
-Detalhes para usar o cliente de SSH serão mostrados no encontro com o professor.
-
-Na sua primeira entrada no servidor, terá que trocar sua senha. Por favor escolha uma senha dificil de adivinhar. O servidor pedirá usa senha original duas vezes, e depois você terá que digitar sua nova senha duas vezes. Será recebido por uma janela semelhante a seguinte:
-
-![Primeira entrada no servidor](images/terminal_screenshot_first.png)
-
-Nessa primeira entrada, o servidor o desconectará imediatamente depois da troca da senha. Tem que se conectar de novo, desta vez usando a nova senha que escolheu no passo anterior. Estará numa janela semelhante a seguinte:
-
-![Terminal](images/terminal_screenshot.png)
-
-Você pode manter abertas varias janelas desse terminal. Isso geralmente é útil.
+De _**qualquer SO – Online no navegador**_:
+ * [OnWorks](https://www.onworks.net/runos/create-os.html)
 
 Durante a disciplina vamos usar muito esse terminal.
 
