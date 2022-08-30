@@ -183,9 +183,9 @@ fd2ps    fdesign  fdformat fdlist   fdmount  fdmountd fdrawcmd fdumount
 ```
 > Se você teclar tab após escrever um comando, mas antes de pressionar a tecla \<Enter\>, **bash** mostrará uma lista de nomes de arquivos. Isto acontece porque muito comandos operam em arquivos.
 
-#### Coringas
+#### Curingas
 
-Você pode utilizar coringas ao se referir aos arquivos.  `*` stands for zero or more characters.  `?` stands for any single character.  For example, to list all files with the extension ".txt", run `ls` with the wildcard pattern "*.txt"
+Você pode utilizar curingas ao se referir aos arquivos.  `*` significa zero ou mais caracteres.  `?` significa qualquer caractere (presença opcional).  Por exemplo, para listar todos os arquivos com a extensão ".txt", digite `ls` com o curinga padrão "*.txt"
 
 ```
 (~) 56% ls -F *.txt
@@ -193,7 +193,7 @@ final_exam_questions.txt  genomics_problem.txt
 genebridge.txt            mapping_run.txt
 ```
 
-Existem padrões mais avançados de coringas, poder ler sobre eles na página de manual do **tcsh**.  Por exemplo, se você quer selecionar os arquivos que começam com os caracteres "f" ou "g" e que terminam com ".txt", pode usar uma faixa de caracteres dentro de colchetes `[f-g]` como parte de seu coringa. Aqui tem um exemplo:
+Existem padrões mais avançados de curingas, poder ler sobre eles na página de manual do **tcsh**.  Por exemplo, se você quer selecionar os arquivos que começam com os caracteres "f" ou "g" e que terminam com ".txt", pode usar uma faixa de caracteres dentro de colchetes `[f-g]` como parte de seu coringa. Aqui tem um exemplo:
 
 ```
 (~) 57% ls -F [f-g]*.txt
@@ -455,101 +455,101 @@ O programa  `wc` conta linhas, caracteres e palavras nos dados enviados a usa en
 
 ```
 (~) 62% wc
-Mary had a little lamb,
-little lamb,
-little lamb.
+Mary tinha um cordeirinho,
+cordeirinho,
+cordeirinho.
 
-Mary had a little lamb,
-whose fleece was white as snow.
+Mary tinha um cordeirinho,
+cuja a lã era branca como a neve.
 ^d * NOTE - Precisa digitar isto, mas não será impresso no terminal (O sinal `^` corresponde a tecla `control`)
       6      20     107
 ```
 En este exemplo, executei o programa `wc` .  Ele aguardou para eu escrever um pequeno poema. Quando terminei, usei o character FIM-DE-ARQUIVO (END-OF-FILE), control-d (^d ).  Então `wc` imprimiu três números, que representam o número de linhas, palavras e caracteres na entrada.
 
-More often, you'll want to count the number of lines in a big file; say a file filled with DNA sequences.  You can do this by _redirecting_ the contents of a file to the standard input of  `wc`. This uses
-the `<`  symbol:
+Frequentemente, você vai querer contar o número de linhas em um arquivo grande; como um arquivo cheio de sequências de DNA.  você pode fazer isso ao _redirecting_ os conteúdos do arquivo para a entrada padrão `wc`. Isso usa
+o `<`  símbolo:
 
 ```
 (~) 63% wc < big_file.fasta
       2943    2998     419272
 ```
 
-If you wanted to record these counts for posterity, you could redirect standard output as well using the `>` symbol:
+Se você quisesse gravar essas contas pra posteriormente, você pode redirecionar a saída padrão também com o `>` símbolo:
 
 ```
 (~) 64% wc < big_file.fasta > count.txt
 ```
 
 
-Now if you `cat` the file _count.txt_, you'll see that the data has been recorded.  `cat` works by taking its standard input and copying it to standard output.  We redirect standard input from the _count.txt_ file, and leave standard output at its default, attached to the terminal:
+Agora se você `cat` o arquivo _count.txt_, verá que a conta foi gravada.  `cat` funciona pegando a entrada padrão e copiando-a para a saída padrão. Nós redirecionamos a entrada padrão do _count.txt_ arquivo, e deixamos a saída padrão predefinida, anexada ao terminal:
 
 ```
 (~) 65% cat < count.txt
       2943    2998     419272
 ```
 
-#### Redirection Meta-Characters
+#### Meta-caracteres de redirecionamento
 
-Here's the complete list of redirection commands for `bash`:
+Aqui está a lista completa de comandos de redirecionamento para `bash`:
 
-| Redirect command    | Description                              |
+| Comando             | Descrição                                |
 | ------------------- | ---------------------------------------- |
-| `< myfile.txt`      | Redirect the contents of the file to standard input |
-| `> myfile.txt`      | Redirect standard output to file         |
-| `>> logfile.txt`    | Append standard output to the end of the file |
-| `1 > myfile.txt`    | Redirect just standard output to file (same as above) |
-| `2 > myfile.txt`    | Redirect just standard error to file     |
-| `&> myfile.txt` | Redirect both stdout and stderr to file  |
+| `< myfile.txt`      | Redireciona os conteúdos do arquivo para a entrada padrão |
+| `> myfile.txt`      | Redireciona a saída padrão para o arquivo         |
+| `>> logfile.txt`    | Acrescenta uma saída padrão para o final do arquivo |
+| `1 > myfile.txt`    | Redireciona apenas a saída padrão para o arquivo (Assim como acima) |
+| `2 > myfile.txt`    | Redireciona apenas o erro padrão para o arquivo     |
+| `&> myfile.txt` | Redireciona tanto o stdout quanto o stderr para o arquivo  |
 
 
-These can be combined.  For example, this command redirects standard input from the file named `/etc/passwd`, writes its results into the file `search.out`, and writes its error messages (if any) into a file named `search.err`.  What does it do?  It searches the password file for a user named "root" and returns all lines that refer to that user.
+Eles podem ser combinados.  Por exemplo, esse comando redireciona a entrada padrão do arquivo chamado `/etc/passwd`, escreve seus resultados no arquivo `search.out`, e escreve suas mensagens de erro (se tiver) dentro de um arquivo chamado `search.err`.  O que ele faz? Ele pesquisa o arquivo chave para um usuário chamado "root" e retorna todas linhas que se referem a esse usuário.
 
 ```
 (~) 66% grep root < /etc/passwd > search.out 2> search.err
 ```
 
-#### Filters, Filenames, and Standard Input
+#### Filtros, Nomes de arquivos, e entrada padrão
 
-Many Unix commands act as filters, taking data from a file or standard input, transforming the data, and writing the results to standard output.  Most filters are designed so that if they are called with one or more filenames on the command-line, they will use those files as input.  Otherwise they will act on standard input.  For example, these two commands are equivalent:
+Muitos Unix comandos agem como filtros, pegando informação de um arquivo ou entrada padrão, transformando a informação, e escrevendo os resultados para saída padrão.  A maioria dos filtros são programados então se eles forem chamados com um ou mais nomes de arquivo na linha de comando, eles usarão estes arquivos como entradas.  Porém eles agirão como entradas padrão.  Por exemplo, estes dois comandos são equivalentes:
 
 ```
 (~) 66% grep 'gatttgc' < big_file.fasta
 (~) 67% grep 'gatttgc' big_file.fasta
 ```
-Both commands use the `grep` command to search for the string "gatttgc" in the file `big_file.fasta`.  The first one searches standard input, which happens to be redirected from the file.  The second command is explicitly given the name of the file on the command line.
+Ambos usam `grep` para pesquisar pela corda "gatttgc" no arquivo `big_file.fasta`.  O primeiro pesquisa entrada padrão, que acontece de ser redirecionado para o arquivo.  O segundo comando está explícitamente dando o nome do arquivo na linha de comando.
 
 
-Sometimes you want a filter to act on a series of files, one of which happens to be standard input.  Many commands let you use `-` on the command-line as an alias for standard input.  Example:
+Às vezes você quer um filtro para agir em séries de arquivos, um dos quais acontece de ser a entrada padrão. Muitos comandos deixam usar `-` na linha de comando como em pseudônimos para a entrada padrão.  Exemplo:
 
 ```
 (~) 68% grep 'gatttgc' big_file.fasta bigger_file.fasta -
 ```
-This example searches for "gatttgc" in three places.  First it looks in file `big_file.fasta`, then in `bigger_file.fasta`, and lastly in standard input (which, since it isn't redirected, will come from the keyboard).
+Esse exemplo pesquisa por "gatttgc" em três lugares.  Primeiro olha no arquivo `big_file.fasta`, depois no `bigger_file.fasta`, e por úlitmo na entrada padrão (que, desde que não seja redirecionad, virá do teclado).
 
 
-#### Standard I/O and Pipes
+#### Padrão I/O e Tubos
 
 
-The coolest thing about the Unix shell is its ability to chain commands together into pipelines.  Here's an example:
+A coisa mais legal de Unix shell é a possibilidades de acorrentar comandos juntos em tubulações.  Aqui um exemplo:
 
 ```
 (~) 65% grep gatttgc big_file.fasta | wc -l
 22
 ```
-There are two commands here. `grep` searches a file or standard input for lines containing a particular string.  Lines which contain the string are printed to standard output.  `wc -l` is the familiar word count program, which counts words, lines, and characters in a file or standard input.  The `-l` command-line option instructs `wc` to print out just the line count.  The `|` character, which is known as a "pipe", connects the two commands together so that the standard output of `grep` becomes the standard input of `wc`. Think of pipes connecting streams of flowing data. 
+Três são dois comandos aqui. `grep` pesquisa pelo arquivo ou entrada padrão por linhas contendo uma corda particular.  As que contém a corda são impressas para a saída padrão.  `wc -l` é o programa de conta familiar, que conta palavras, linhas, e caracteres em um arquivo ou entrada padrão. A `-l` opção de linha de comando instrui `wc` para imprimir apenas a linha de conta.  O `|` caractere, conhecido como "cano", conecta os dois comandos juntos então a saída padrão de `grep` se torna a entrada inicial de `wc`. Pense nos canos conectando fluxos de informação a seguir. 
 
 
-What does this pipe do?  It prints out the number of lines in which the string "gatttgc" appears in the file `big_file.fasta`.
+O que o cano faz?  ele imprime o número de linhas em que a corda "gatttgc" aparece no arquivo `big_file.fasta`.
 
-#### More Pipe Idioms
+#### Mais idiomas de cano
 
-Pipes are very powerful. Here are some common command-line idioms.
+Canos são muito poderosos. Aqui estão alguns idiomas de linhas de comando comuns.
 
-**Count the Number of Times a Pattern does NOT Appear in a File**
+**Conte o número de vezes que o padrão NÃO aparece no arquivo**
 
-The example at the top of this section showed you how to count the number of lines in which a particular string pattern appears in a file.  What if you want to count the number of lines in which a pattern does **not** appear?
+O exemplo no começo da seção mostrou como contar o número de linhas em que um padrão particular de corda aparece no arquivo.  E se você contar o número de linhas em que o padrão **não** aparece?
 
-Simple.  Reverse the test with the `-v` switch:
+Simples.  Faça o teste reverso `-v` trocar:
 
 ```
 (~) 65% grep -v gatttgc big_file.fasta | wc -l
