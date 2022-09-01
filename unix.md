@@ -556,65 +556,62 @@ Simples.  Faça o teste reverso `-v` trocar:
 2921
 ```
 
-**Uniquify Lines in a File**
+**Singularizar linhas em um arquivo**
 
 
-If you have a long list of names in a text file, and you want to weed out the duplicates:
+Se você tem uma longa lista de nomes em um arquivo de texto, e você quer eliminar os duplicados:
 
 ```
 (~) 66% sort long_file.txt | uniq > unique.out
 ```
-This works by sorting all the lines alphabetically and piping the result to the `uniq` program, which removes duplicate lines that occur one after another.  That's why you need to sort first. The output is placed in a file named `unique.out`.
+Isso funciona ordenando todas as linhas alfabeticamente e tubulando o resultado para o 'uniq' programa, que remove linhas duplicadas que ocorrem em sequência. Por conta disso você precisa ordenrar primeiro. A saída é colocada em um arquivo chamado 'unique.out'.
 
-**Concatenate Several Lists and Remove Duplicates**
+**Concatenar várias listas e remover duplicadas**
 
 
-If you have several lists that might contain repeated entries among them, you can combine them into a single unique list by concatenating them together, then sorting and uniquifying them as before:
+Se vocÊ tem muitas listas que podem conter entradas repetidas entre elas, você pode combinar elas em uma lista única ao concatenar elas juntas, depois ordenando e unificando-as como antes.
 
 ```
 (~) 67% cat file1 file2 file3 file4 | sort | uniq
 ```
 
-**Count Unique Lines in a File**
+**Contar linhas únicas em um arquivo**
 
 
-If you just want to know how many unique lines there are in the file, add a `wc` to the end of the pipe:
-
+Se você só quer saber quantas linhas únicas existem no arquivo, adicione um 'wc' ao fim do tubo: 
 ```
 (~) 68% sort long_file.txt | uniq | wc -l
 ```
 
-**Page Through a Really Long Directory Listing**
+**Página através de uma listagem de diretório muito longa**
 
 
-Pipe the output of `ls` to the `more` program, which shows a page at a time.  If you have it, the `less` program is even better:
-
+Canalize a saída 'is' para o programa 'more', que mostra a página de uma vez. se você a tiver, o programa 'less' é ainda melhor:
 ```
 (~) 69% ls -l | more
 ```
 
-**Monitor a Growing File for a Pattern**
+**Monitorar um arquivo em crescimento para padronizar**
 
 
-Pipe the output of `tail -f` (which monitors a growing file and prints out the new lines) to `grep`.  For example, this will monitor the `/var/log/syslog`file for the appearance of e-mails addressed to 'mzhang':
-
+Canalize a saída `tail -f` (que monitora um arquivo crescente e imprime as linhas novas) para 'grep'. Por exemplo, isso irá monitorar o arquivo `/var/log/syslog` para a aparência de e-mails endereçados a 'mzhang':
 ```
 (~) 70% tail -f /var/log/syslog | grep mzhang
 ```
 
-### More Unix
+### Mais Unix
 
-Here are a few more advanced Unix commands that are very useful, and when you have time you should investigate further. We list the page numbers for the Linux Phrasebook Second Edition by Scott Granneman or links to online tutorials.
+Aqui estão mais alguns comandos avançados de Unix que são muito úteis, e quando você tiver tempo deve investigar mais a fundo. Nós listamos números de páginas para a segunda edição do livro de frases Unix de Scott Granneman ou links para tutoriais online. 
 
- - `awk` (Linux Phrasebook p.194-198)([online tutorial](https://www.tutorialspoint.com/awk/index.htm))
- - `sed` (Linux Phrasebook p.188-194)([online tutorial](https://www.tutorialspoint.com/sed/index.htm))
+ - `awk` (Linux Livro de frases p.194-198)([online tutorial](https://www.tutorialspoint.com/awk/index.htm))
+ - `sed` (Linux Livro de frases p.188-194)([online tutorial](https://www.tutorialspoint.com/sed/index.htm))
  - `perl` one-liners ([online tutoral](https://catonmat.net/introduction-to-perl-one-liners))
  - `for` loops ([online tutorial](https://www.tutorialspoint.com/unix/for-loop.htm))
 
 ---
 
 
-### [Link to Unix 1 Problem Set](problemsets/Unix_01_problemset.md)
+### [Link para o conjunto de problemas 1 de Unix](problemsets/Unix_01_problemset.md)
 
 
 <div style="page-break-after: always;"></div>  
@@ -624,10 +621,10 @@ Here are a few more advanced Unix commands that are very useful, and when you ha
 ## Unix 2
 
 
-### Text Editors
+### Editores de texto
 
 
-It is often necessary to create and write to a file while using the terminal. This makes it essential to use a terminal text editor. There are many text editors out there. Some of our favorite are Emacs and vim. We are going to start you out with a simple text editor called  `vi`
+Se é frequentemente necessário criar e escrever para um arquivo enquanto usanod o terminal. Isso torna essencial o uso de um editor de texto para o terminal. Existem muitos editores de texto. Alguns dos nossos favoritos são Emacs e vim. Nós vamos te introduzir com um editor de texto simples chamado 'vi'. 
 
 ### Introdução ao nano
 
@@ -687,37 +684,37 @@ Note que o nome do arquivo aparece na primeira linha. Se você iniciar o `nano` 
 
 Nas ultimas dois linhas da sua tela tem varias combinações de teclas com diversas funções. O simbolo `^` indica que você tem que usar a tecla `control` na combinação. Por exemplo `^O`, significa que tem que usar as teclas `control` + `O` para escrever seu arquivo em disco.
 
-### Introduction to vi
+### Introdução ao vi
 
-What is **vi**?
+O que é **vi**?
 
-> **vi** is a command line text editor. vi is included in every Linux installation. You don't have to install it, ever.
-
-
-
-What is a command line text editor?
-
-> A command line text editor is an text editor that you use from the command line. In most command line text editors, don't expect to be able to point and click. You will need to naviage with keyboard key strokes. The two most popular text editors are **vi** and **emacs**. You are free to use either, but we will start with **vi** since the keystrokes are less complex than in **emacs**.
+> **vi** é uma linha de comando de edição de texto. vi é incluso em qualquer instalação Linux. Portanto, você não precisa instalar. 
 
 
 
-Why do I care about command line text editors?
+O que é uma linha de comando de edição de texto?
 
-> If you are logged into a remote machine, a command line text editor is the fastest, easiest, most efficient way to write text files.
-
-
+> Uma linha de comando de edição de texto é um editor de texto que você usa de uma linha de comando. Na maioria delas, não espere poder apontar e clicar. Você vai precisar navegar com as teclas do teclado. Os editores de texto mais populares são **vi** e **Emacs**. Você é livre para usar ambos, mas vamos começar com **vi** já que o pressionamento de teclas é menos complexo que em **emacs**. 
 
 
 
-#### Getting Started with vi
+Por que eu me importo com linhas de comando de edição de texto?
+
+> Se você está registrado em uma máquina remota, uma linha de comando de edição de texto é a mais rápida, fácil, e eficiente forma de escrever arquivos de texto. 
 
 
 
-__Opening a file__
+
+
+#### Começando com o vi
 
 
 
-On the command line, type `vi` followed by a file name.
+__Abrindo um arquivo__
+
+
+
+Na linha de comando, digite `vi` seguido do nome do arquivo.
 
 ```bash
 srobb% vi <file>
@@ -725,7 +722,7 @@ srobb% vi <file>
 
 
 
-Let's try it:
+Vamos tentar:
 
 ```bash
 srobb% vi first_vi_file.txt
@@ -733,7 +730,7 @@ srobb% vi first_vi_file.txt
 
 
 
-You will see this in your terminal.
+Você verá isso em seu terminal.
 
 ```
 ~
@@ -756,13 +753,13 @@ You will see this in your terminal.
 "first_vi_file.txt" [New File]
 ```
 
-Notice the file name at the bottom.
+Repare o nome do arquivo na parte inferior.
 
 
 
 
 
-If you **do not** include a file name you will see something similar to this:
+Se você **não** incluir o nome do arquivo você verá algo como isso: 
 
 ```bash
 ~
@@ -787,11 +784,11 @@ If you **do not** include a file name you will see something similar to this:
 
 ```
 
-Read what the message says and type `:q<Enter>` to **Q**uit or exit.
+Leia o que a mensagem diz e digite `:q<Enter>` para **Q**uit ou sair.
 
 
 
-__vi has two modes.__
+__vi tem dois modos.__
 
 1. **Insert Mode**
 
@@ -799,33 +796,32 @@ __vi has two modes.__
 
    
 
-**Insert Mode** is for typing your file contents. All keyboard strokes will be interpreted as characters you want to see in your file.
+**Insert Mode** É para digitar o nome dos arquivos. Todas as teclas pressionadas serão interpretadas como caracteres que você quer ver em seu arquivo. 
 
-**Command Mode** is for using commands. All keyboard stokes will be interprested as commands and ***not*** as part of your file. Common commands are for deleting, copying, searching, replacing, and saving.
+**Command Mode** É para usar comandos. Todas as teclas pressionadas serão interpretadas como comando e **não** como parte do arquivo. Comandos comuns são para deletar, copiar, pesquisar, recolocar e salvar. 
 
  
 
-#### Creating, Writing, And Saving a File Walk through
+#### Criando, Escrevendo, e salvando o percorrer de um arquivo
 
 
 
-__Create__
+__Criar__
 
-From the command line open a new file by typing 
-
+Da linha de comando abra um novo arquivo digitando:
 `vi first_vi_file.txt` 
 
 
 
-__Write__
+__Escrever__
 
-Start typing content. To do this we need to enter **Insert Mode**. 
+Comece digitando o conteúdo. Para isso nós precisamos entrar no **modo inserir** 
 
-To do this type `i`.
+Para isso digite `i`.
 
 
 
-Your vi session will now look like this:
+Sua sessão vi agora vai se parecer com isso: 
 
 ```bash
 ~
@@ -837,73 +833,72 @@ Your vi session will now look like this:
 -- INSERT (paste) --
 ```
 
-Notice the `INSERT` at the bottom of the screen.
+Repare o `INSERT` na parte inferior da tela.
 
 
 
-Start typing your file contents. Remember that all keystrokes are ones you want to see in your file and that your mouse will not work.
+Comece digitando os conteúdos do arquivo. Lembre que todas as teclas pressionadas são aquelas que você quer ver no seu arquivo e seu mouse não funcionará. 
 
 
 
-__Save__
+__Salvar__
 
 
 
-Now that the file contains some content let's enter **Command Mode** so that we can save our file.
+Agora que o arquivo contém alguns conteúdos vamos entrar no **modo de comando** para podermos salvar o arquivo. 
 
 
 
-1. Press the `<ESC>` key to enter **Command Mode**.
-2. type `:w` (colon followed by a w) to **Save (Write)**
+1. Pressione a tecla `<ESC>` para entrar no **modo de comando**.
+2. Digite `:w` (dois pontos seguidos por w) para **Salvar (escrita)**
 
 
 
-If you want to type some more content, enter **Insert Mode** (`i`). 
+Se você quer digitar mais algum conteúdo, entre no **modo inserir** (`i`). 
 
-If, instead you want to exit, since you are already in Command Mode you can use the quit keystrokes `:q`
-
-
-
-#### Common Activities and vi Commands
-
-Enter into **Command Mode** for all commands. If you are unsure that you are in **command mode**, just press the `<esc>` key. It will not hurt if you are already in **Command Mode**
+Se, ao invés você quiser sair, desde que já estiver no modo de comando você pode usar o pressionamento de tecla `:q`
 
 
 
-__Saving and Exiting__
+#### Atividades comuns e comandos vi 
 
-Remember to enter into **Command Mode** with `<esc>` key
+Entre no **modo de comando** para todos os comandos. Se você assegurar que você está no **modo de comando**, apenas pressione a tecla `<esc>`. Isso não irá trazer problemas se você já estiver no **modo de comando** 
 
-|key stroke | meaning | 
+
+__Salvando e saindo__
+
+Lembre-se de entrar no **modo de comando** com a tecla `<esc>` 
+
+|teclas | significado | 
 |-----------|---------|  
-|`:wq` | Save (**W**rite) and **Q**uit |   
-|`:q!` | **Q**uit without Saving!!! |  
-|`:w`  | Save (**W**rite) Only |  
+|`:wq` | Salvar (**W**rite) e **S**air |   
+|`:q!` | **S**air sem salvar!!! |  
+|`:w`  | Salvar (**W**rite) apenas |  
 
   
 
-Most commands within vi are executed as soon as you press a sequence of keys. Any command beginning with a colon ( : ) requires you to hit `<enter>` to complete the command.
+A maioria dos comandos com o vi são executados assim que você pressiona uma sequência de teclas. Qualquer começo de comando com os dois pontos ( : ) requerem que você pressione `<enter>` para completar o comando.
 
 
 
-__Getting around__
+__Se locomovendo__
 
-Remember to enter into **Command Mode** with `<esc>` key
+Lembre-se de entrar no **modo de comando** com a tecla `<esc>`
 
-|key stroke | meaning | 
+|Teclas | Significados | 
 |-----------|---------|  
-|Arrow keys  | move the cursor around |  
-|`j`, `k`, `h`, `l` | move the cursor down, up, left and right (similar to the arrow keys) |  
-|`0` (zero) | move cursor to beginning of current line |  
-|`^` (caret) | move cursor to beginning of current line |  
-|`$`  |  move cursor to end of the current line |  
-|`:n` | move to the nth line in the file |  
-|`nG` | move to the **n**th line (eg 5G moves to 5th line) |  
-|`G` | move to the last line |  
-|`w` | move to the beginning of the next word |  
-|`nw`| move forward n word (eg 2w moves two words forwards) |  
-|`b` | move to the beginning of the previous word |  
-|`nb` | move back n word |  
+|Flechas  | movem o cursor ao redor |  
+|`j`, `k`, `h`, `l` | movem o cursor para baixo, cima, esquerda e direita (similar as flechas) |  
+|`0` (zero) | move o cursor para o começo da linha atual |  
+|`^` (circunflexo) | move o cursor para o começo da linha atual |  
+|`$`  | move o cursor para o fim da linha atual |  
+|`:n` | move o cursor para o número de linhas do arquivo |  
+|`nG` | move o cursor para o número da linha digitado (eg 5G move para a 5ª linha) |  
+|`G` | move para a última linha |  
+|`w` | move para o começo da próxima palavra |  
+|`nw`| move adiante "n" palavras (eg 2w move duas palavras a frente) |  
+|`b` | move para o começo da palavra anterior |  
+|`nb` | move para trás "n" palavras |  
 
 
 
