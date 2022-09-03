@@ -51,8 +51,8 @@ Nota: '$' indica o prompt de comando. Lembre-se do Unix 1 que cada computador te
 Primeiros comandos em Python:
 
 ```python
->>> print("Ola, turma 2022!")
-Ola, turma 2022!
+>>> print("Olá, turma 2022!")
+Olá, turma 2022!
 ```
 
 > Nota: `print` é uma função. Nomes de funções precedem (); assim, de maneira formal a função é `print()`
@@ -67,7 +67,7 @@ Ola, turma 2022!
 Conteúdos do arquivo:
 
 ```python
-print("Ola, turma 2022!")
+print("Olá, turma 2022!")
 ```
 
 #### Rodando scripts em Python
@@ -83,7 +83,7 @@ Execute o script desta forma (% representa o prompt):
 Este procedimento gera o seguinte resultado no terminal:
 
 ```bash
-print("Ola, turma 2022!")
+print("Olá, turma 2022!")
 ```
 
 #### Uma forma mais rápida/melhor de rodar scripts em Python
@@ -142,9 +142,9 @@ Uma escolha ainda pior é dar nomes de variáveis que contêm nomes de genes com
 
 Em Ciência da Computação, os nomes devem sempre descrever de forma acurada os objetos aos quais estejam vinculados. Isso reduz a possibilidade de `bugs` no seu código, torna muito mais fácil o seu entendimento se você volta ao seis meses depois ou por pessoas com as quais compartilha seu código. Embora pensar em bons nomes para variáveis tome um pouco mais de tempo e esforço, isso prenive problemas no futuro!
 
-#### Reserved Words
+#### Palavras reservadas
 
-The following is a list of Python keywords. These are special words that already have a purpose in python and therefore cannot be used as variable names.
+A lista a seguir compreende as palavras reservadas de Python. Elas são palavras especiais que já têm um propósito em Python e, portanto, não podem ser usadas como nomes de variáveis.
 
 ```
 and         exec        not
@@ -160,40 +160,41 @@ else        lambda      yield
 except      list        hash
 ```
 
-#### Lines and Indentation
+#### Linhas e indentação
 
-Python denotes a block of code by lines with the same level of indentation. This keeps lines of code that run together organized. Incorrect line spacing and/or indention will cause an error or can make your code run in a way you don't expect. You can get help with indentation from good text editors or Interactive Development Environments (IDEs).
+Python considera como um bloco de código linhas adjacentes que apresentam o mesmo nível de indentação. Isso mantém organizadas as linhas de código que são executadas de forma conjunta. Espaçamento e/ou indentação incorretos irão causar erros ou podem fazer que seu código seja executado de uma forma que você não espera. Ambientes de Desenvolvimento Interativo (IDEs) e editores de texto podem ajudar a indentar códigos corretamente.
 
-The number of spaces in the indentation need to be consistent, but a specific number is not required. All lines of code, or statements, within a single block must be indented the same amount. For example, using four spaces:
+O número de espaços na indentação precisa ser consistente, mas este número não é específico. Todas as linhas de código ou sentenças dentro de um bloco precisa ser identado com o mesmo número. Por exemplo, usando quatro espaços:
+
 
 ```python
 #!/usr/bin/env python3
-message = '' # make an empty variable
+mensagem = '' # cria uma variável vazia
 for x in (1,2,3,4,5):
     if x > 4:
-        print("Hello")
-        message = 'x is big'
-    else: 
+        print("Olá")
+        mensagem = 'x é grande'
+    else:
         print(x)
-        message = 'x is small'
-    print(message)
-print('All Done!')
+        mensagem = 'x é pequeno'
+    print(mensagem)
+print('Pronto!')
 ```
 
 
-#### Comments
+#### Comentários
 
-Including comments in your code is an essential programming practice. Making a note of what a line or block of code is doing will help the writer and readers of the code. This includes you!
+Incluir comentários no seu código é uma prática essencial. Anotar o que uma linha ou bloco de código faz ajudará o programador e os leitores do código. Incluindo você!
 
-Comments start with a pound or hash symbol `#`. All characters after this symbol, up to the end of the line are part of the comment and are ignored by Python. 
+Comentários iniciam com o símbolo `#`. Todos os caracteres depois deste símbolo, até o final da linha, são parte do comentário e serão ignorados pelo interpretador de Python.
 
-The first line of a script starting with `#!` is a special example of a comment that also has the special function in Unix of telling the Unix shell how to run the script.
+A primeira linha de um script começa com `#!`, um exemplo especial de comentário que tem a função especial no Unix de informar ao Shell como executar o script.
 
 ```python
 #!/usr/bin/env python3
 
-# this is my first script
-print("Hello, PFB2019!") # this line prints output to the screen
+# este é meu primeiro código
+print("Olá, turma 2022!") # esta linha imprema o conteúdo na tela
 ```
 
 
@@ -338,7 +339,7 @@ print(friend1,'and',friend2,'are friends')
 The advantage of getting input from the user from the command line is that you can write a script that is general. It can print a message with any input the user provides. This makes it flexible.
 The user also supplies all the data the script needs on the command line so the script doesn't have to ask the user to input a name and wait until the user does this. The script can run on its own with no further interaction from the user. This frees the user to work on something else. Very handy!
 
-#### What kind of object am I working with?
+#### Com que tipo de objeto estou trabalhando?
 
 You have an identifier in your code called `data`. Does it represent a string or a list or a dictionary? Python has a couple of functions that help you figure this out.
 
