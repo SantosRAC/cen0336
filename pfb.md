@@ -16,7 +16,7 @@ Sofia Robb
 
 ### Visão geral de Python
 
-Python é uma linguagem scripting. Ela é útil para desenvolvimento de projetos científicos de médio porte. Quando você executa um script de Python, o interpretador da linguagem irá gerar um código em bytes e interpretá-lo. Esse processo acontece automaticamente, você precisa se preocupar com isso. Linguagens compiladas como C e C++ vão rodar muito mais rapidamente, mas são também muito mais complicadas de programar. Programas usando linguagens como Java (que também são compiladas) são adequados para projetos grandes com programação colaborativa, mas não são executados tão rapidamente como C e são mais complexos de escrever que Python.
+Python é uma linguagem de script. Ela é útil para desenvolvimento de projetos científicos de médio porte. Quando você executa um script de Python, o interpretador da linguagem irá gerar um código em bytes e interpretá-lo. Esse processo acontece automaticamente, você precisa se preocupar com isso. Linguagens compiladas como C e C++ vão rodar muito mais rapidamente, mas são também muito mais complicadas de programar. Programas usando linguagens como Java (que também são compiladas) são adequados para projetos grandes com programação colaborativa, mas não são executados tão rapidamente como C e são mais complexos de escrever que Python.
 
 Python tem
 
@@ -26,78 +26,77 @@ Python tem
 - classes
 - métodos
 
-**Data types** are just different types of data which are discussed in more detail later. Examples of data types are integer numbers and strings of letters and numbers (text). These can be stored in variables.
+**Tipos de dados** correspondem aos diferentes tipos de dados que serão discutidos em mais detalhes posteriormente. Exemplos de tipos de dados incluem números inteiros e cadeias de caracteres (texto). Eles podem ser armazenados em variáveis.
 
-**Functions** do something with data, such as a calculation. Some functions are already built into Python. You can create your own functions as well. 
+**Funções** fazem algo com dados, como cálculos. Algumas funções estão disponíveis de forma nativa em Python. Você pode também criar suas próprias funções.
 
-**Objects** are a way of grouping a set of data and functions (methods) that act on that data.
+**Objetos** correspondem a maneiras de agrupar conjuntos de dados e funções (métodos) que agem nestes dados.
 
-**Classes** are a way to encapsulate (organize) variables and functions. Objects get their variables and methods from the class they belong to. 
+**Classes** correspondem a uma maneira de encapsular (organizar) variáveis e funções. Objetos usam variáveis e métodos da classe às quais pertencem. 
 
-**Methods** are just functions that belong to a class. Objects that belong to the a class can use methods from that class.
+**Métodos** são funções que pertencem a uma classe. Objetos que pertencem a uma classe podem usar métodos daquela classe.
 
-### Running Python
+### Rodando Python
 
-There are two versions of Python: Python 2 and Python 3. We will be using 3. This version fixes some of the problems with Python 2 and breaks some other things. A lot of code has already been written for Python 2 (it's older), but going forwards, more and more new code development will use Python 3.
+Há duas versões de Python: Python 2 e Python 3. Nós usaremos Python 3. Esta versão conserta problemas de Python 2 e é incompatível em alguns aspectos com Python 2. Muitos códigos já foram desenvolvidos em Python 2 (é uma versão mais antiga), mas muitos códigos já foram e estão sendo desenvolvidos em Python 3.
 
+#### Interpretador interativo
 
-#### Interactive Interpreter
+Python pode ser executado em uma linha por vez em um interpretador interativo. É como se usasse a linha de comando de Shell (que estudamos nas duas primeiras aulas/ capítulos), mas agora com a linguagem Python. Para executar o interpretador, execute o seguinte código no seu terminal:  
 
-Python can be run one line at a time in an interactive interpreter. You can think of this as a Python shell. To launch the interpreter, type the following into your terminal window:  
+`$ python3`
 
-`$ python3`    
+Nota: '$' indica o prompt de comando. Lembre-se do Unix 1 que cada computador tem seu próprio prompt!
 
-Note: '$' indicates the command line prompt. Recall from Unix 1 that every computer can have a different prompt!
-
-First Python Commands:
+Primeiros comandos em Python:
 
 ```python
->>> print("Hello, PFB2019!")
-Hello, PFB2019!
+>>> print("Ola, turma 2022!")
+Ola, turma 2022!
 ```
 
-> Note: `print` is a function. Function names are followed by (), so formally, the function is `print()`
+> Nota: `print` é uma função. Nomes de funções precedem (); assim, de maneira formal a função é `print()`
 
 
+#### Scripts em Python são arquivos de texto
 
+* O mesmo código acima é digitado em um arquivo usando um editor de texto.
+* Scripts em Python são sempre salvos em arquivos cujos nomes têm a extensão '.py' (o nome do arquivo termina com '.py').
+* Poderíamos executar o código `ola.py`
 
-#### Python Scripts are Text Files
+Conteúdos do arquivo:
 
-* The same code from above is typed into a text file using a text editor.
-* Python scripts are always saved in files whose names have the extension '.py' (i.e. the filename ends with '.py').
-* We could call the file `hello.py`
-
-File Contents:  
 ```python
-print("Hello, PFB2019!")
+print("Ola, turma 2022!")
 ```
 
-#### Running Python Scripts
+#### Rodando scripts em Python
 
-Typing the Python command followed by the name of a script makes Python execute the script. Recall that we just saw you can run an interactive interpreter by just typing `python` on the command line.
+Digitar o comando `python3` seguido do nome do script faz com que Python execute o código. Lembre-se que nós vimos que podemos também executar o código de forma interativa executando apenas `python3` (ou `python`) na linha de comando.
 
-Execute the Python script like this (% represents the prompt)
+Execute o script desta forma (% representa o prompt):
 
 ```bash
-% python3 hello.py 
+% python3 ola.py 
 ```
 
-This produces the following result in the Terminal:
+Este procedimento gera o seguinte resultado no terminal:
+
 ```bash
-Hello, PFB2019!
+print("Ola, turma 2022!")
 ```
 
-#### A quicker/better way to run python scripts
+#### Uma forma mais rápida/melhor de rodar scripts em Python
 
-If you make your script executable, you can run it without typing `python3` first. Use `chmod` to change the permissions on the script like this
+Se você tornar script em um executável, você pode executá-lo sem precisar digitar `python3` antes. Use o comando `chmod` para alterar as permissões do script desta forma:
 
-`chmod +x hello.py`
+`chmod +x ola.py`
 
-You can look at the permissions with 
+Você pode verificar as permissões assim:
 
 ```
-% ls -l hello.py 
--rwxr-xr-x  1 sprochnik  staff  60 Oct 16 14:29 hello.py
+% ls -l ola.py 
+-rwxr-xr-x  1 sprochnik  staff  60 Oct 16 14:29 ola.py
 ```
 
 The first 10 characters you see displayed on the line have special meanings. The first character (`-`) tells you what kind of file `hello.py` is. `-` means a normal file, `d` a directory, `l` a link. The next nine characters come in three sets of three. The first set refers to the your permissions, the second set your group's permissions, and the last set to everyone else. Each three character set shows in order `rwx` for read, write, execute. If someone doesn't have a permission, a `-` is displayed instead of a letter. The three 'x' characters means anyone can execute or run this script. 
