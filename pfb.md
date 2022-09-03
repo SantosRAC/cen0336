@@ -8,23 +8,23 @@ __Criadores do material na versão em Inglês__
 Simon Prochnik
 Sofia Robb
 
-# Python Lectures
+# Aulas de Python
 
 
 ## Python 1
 
 
-### Python Overview
+### Visão geral de Python
 
-Python is a scripting language. It is useful for writing medium-sized scientific coding projects. When you run a Python script, the Python program will generate byte code and interpret the byte code. This happens automatically and you don't have to worry about it. Compiled languages like C and C++ will run much faster, but are much much more complicated to program. Languages like Java (which also gets compiled into byte code) are well suited to very large collaborative programming projects, but don't run as fast as C and are more complex that Python.
+Python é uma linguagem scripting. Ela é útil para desenvolvimento de projetos científicos de médio porte. Quando você executa um script de Python, o interpretador da linguagem irá gerar um código em bytes e interpretá-lo. Esse processo acontece automaticamente, você precisa se preocupar com isso. Linguagens compiladas como C e C++ vão rodar muito mais rapidamente, mas são também muito mais complicadas de programar. Programas usando linguagens como Java (que também são compiladas) são adequados para projetos grandes com programação colaborativa, mas não são executados tão rapidamente como C e são mais complexos de escrever que Python.
 
-Python has 
+Python tem
 
-- data types
-- functions
-- objects
+- tipos de dados
+- funções
+- objetos
 - classes
-- methods
+- métodos
 
 **Data types** are just different types of data which are discussed in more detail later. Examples of data types are integer numbers and strings of letters and numbers (text). These can be stored in variables.
 
