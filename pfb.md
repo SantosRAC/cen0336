@@ -3,6 +3,7 @@ Tradução e modificação do material associado a [programmingforbiology.org](h
 
 __Criador e Instrutor da versão em Português__
 Diego M. Riaño-Pachón
+Renato Augusto Corrêa dos Santos (disciplina CEN0336 no segundo semestre de 2022)
 
 __Criadores do material na versão em Inglês__
 Simon Prochnik
@@ -198,89 +199,91 @@ print("Olá, turma 2022!") # esta linha imprema o conteúdo na tela
 ```
 
 
-#### Blank Lines
+#### Linhas em branco
 
-Blank lines are also important for increasing the readability of the code. You should separate pieces of code that go together with a blank line to make 'paragraphs' of code. Blank lines are ignored by the Python interpretor.
+Linhas em branco são importantes para aumentar a legibilidade do código. Você deve separar com uma linha em branco trechos de código que vão juntos, organizando em "parágrafos" de código. Linhas em branco são ignoradas pelo interpretador de Python.
 
 
-### Data Types and Variables
+### Tipos de dados e variáveis
 
-This is our first look at variables and data types. Each data type will be discussed in more detail in subsequent sections. 
+Esta é a sua primeira oportunidade de olhar para variáveis e tipos de dados. Cada tipo será discutido em mais detalhes nas seções subsequentes.
 
-The first concept to consider is that Python data types are either immutable (unchangeable) or not. Literal numbers, strings, and tuples cannot be changed. Lists, dictionaries, and sets can be changed. So can individual (scalar) variables. You can store data in memory by putting it in different kinds of variables. You use the `=` sign to assign a value to a variable.
+O primeiro conceito a ser considerado é que os tipos de dados de Python podem ser ou não mutáveis. Números literais, strings e tuplas não podem ser alterados. Listas, dicionários e sets podem. Da mesma forma, variáveis individuais também podem ser alteradas. Você pode armazenar dados na memória por meio da atribução de variáveis, o que pode ser feito usando o sinal "=".
 
-#### Numbers and Strings
+#### Números e Strings
 
-Numbers and strings are two common data types. Literal numbers and strings like this `5` or `'my name is'`  are immutable. However, their values can be stored in variables, which can be changed.
+Números e strings são dois tipos comuns de dados. Números literais e strings como `5` ou `meu nome é` são imutáveis. No entanto, seus valores podem ser armazenados em variáveis, as quais podem ser alteradas.
 
-For Example:  
+Por exemplo:
+
 ```python
-gene_count = 5
-# change the value of gene_count
-gene_count = 10
+contagem_genes = 5
+# alterando o valor de contagem_genes
+contagem_genes = 10
 ```
->Recall the section above on variable and object names (and variables are objects in Python).
+>Lembre-se que da seção anterior sobre nomes de variáveis e objetos (e variáveis são objetos em Python).
 
-Different types of data can be assigned to variables, i.e., integers (`1`,`2`,`3`), floats (floating point numbers, `3.1415`), and strings (`"text"`).
+Diferentes tipos de dados podem ser atribuídos a variáveis, como inteiros (`1`,`2`,`3`), números de ponto flutuante (`3.1415`) e strings (`"texto"`).
 
-For Example:
+Por exemplo:
+
 ```python
-count   = 10     # this is an integer
-average = 2.531    # this is a float
-message = "Welcome to Python" # this is a string
+contagem   = 10    # este é um inteiro
+média = 2.531      # este é um número de ponto flutuante
+mensagem = "Bem-vindo ao interpretador de Python" # isso é uma string
 ```
 
 `10`, `2.531`, and `"Welcome to Python"` are singular (scalar) pieces of data, and each is stored in its own variable.
 
 Collections of data can also be stored in special data types, i.e., tuples, lists, sets, and dictionaries. You should always try to store like with like, so each element in the collection should be the same kind of data, like an expression value from RNA-seq or a count of how many exons are in a gene or a read sequence. Why do you think this might be?
 
-#### Lists 
+#### Listas
 
-- Lists are used to store an ordered, *indexed* collection of data.
-- Lists are mutable: the number of elements in the list and what's stored in each element can change
-- Lists are enclosed in square brackets and items are separated by commas
+- Listas são usadas para armazenar coleções de dados ordenados (indexados).
+- Listas são mutáveis: o número de elementos em uma lista e o que é armazenado em cada elemento podem ser alterados.
+- Listas são delimitadas por colchetes e seus itens separados por vírgula.
 
 
 ```python
 [ 'atg' , 'aaa' , 'agg' ]
 ```
 
-| Index | Value |
+| Índice | Valor |
 | ----- | ----- |
 | 0     | atg   |
 | 1     | aaa   |
 | 2     | agg   |
 
-> The list index starts at 0
+> A indexação de listas começa em 0
 
-#### Tuples
+#### Tuplas
 
-- Tuples are similar to lists and contain ordered, *indexed* collections of data.
-- **Tuples are immutable: you can't change the values or the number of values**
-- A tuple is enclosed in parentheses and items are separated by commas.
+- Tuplas são similares a listas e contêm coleçaões de dados ordenados (indexados).
+- **Tuplas são imutáveis: você não consegue alterar os valores ou número de elementos**
+- A tupla é delimitada por parênteses e seus itens são separados por vírgula.
 ```python
-( 'Jan' , 'Feb' , 'Mar' , 'Apr' , 'May' , 'Jun' , 'Jul' , 'Aug' , 'Sep' , 'Oct' , 'Nov' , 'Dec' )
+( 'Jan' , 'Fev' , 'Mar' , 'Abr' , 'Mai' , 'Jun' , 'Jul' , 'Ago' , 'Set' , 'Out' , 'Nov' , 'Dez' )
 ```
 
 
-| Index | Value |
+| Índice | Valor |
 | ----- | ----- |
 | 0     | Jan   |
-| 1     | Feb   |
+| 1     | Fev   |
 | 2     | Mar   |
-| 3     | Apr   |
-| 4     | May   |
+| 3     | Abr   |
+| 4     | Mai   |
 | 5     | Jun   |
 | 6     | Jul   |
-| 7     | Aug   |
-| 8     | Sep   |
-| 9     | Oct   |
+| 7     | Ago   |
+| 8     | Set   |
+| 9     | Out   |
 | 10    | Nov   |
-| 11    | Dec   |
+| 11    | Dez   |
 
 
 
-#### Dictionary
+#### Dicionário
 
 - Dictionaries are good for storing data that can be represented as a two-column table.
 
