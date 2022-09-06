@@ -308,25 +308,29 @@ Collections of data can also be stored in special data types, i.e., tuples, list
 
 #### Parâmetros de linha de comando: uma lista especial de par
 
-Command line parameters follow the name of a script or program and have spaces between them. They allow a user to pass information to a script on the command line when that script is being run. Python stores all the pieces of the command line in a special list called `sys.argv`. 
+Parâmetros de linha de comando são colocados após o nome do script ou programa. Antes do primeiro parâmetro e entre parâmetros adicioansi há espaçamento.
+Os parâmetros permitem ao usuário fornecer informação ao script quando ele está sendo executado. Python armazena cada trecho do comando em uma lista especial chamada `sys.argv`.
 
-You need to import the module named `sys` at the beginning of your script like this
+Você precisará importar o módulo chamado `sys` no início do seu script desta forma:
 
 ```python
 #!/usr/bin/env python3
 import sys
 ```
 
-Let's imagine we have a script called 'friends.py'. If you write this on the command line:
+Vamos imaginar que um script é chamado `amigos.py`. Se você escrever isso na linha de comando:
+
 ```bash
-$ friends.py Joe Anita
+$ amigos.py Maria Carlos
 ```
-This happens inside the script:
-> the script name 'friends.py', and the strings 'Joe' and 'Anita'  appear in a list called `sys.argv`.  
+
+Isso acontece dentro do script:
+
+> o nome do script 'amigos.py' e as strings 'Maria' e 'Carlos' aparecem na lista chamada `sys.argv`.  
 
 > These are the command line parameters, or arguments you want to pass to your script.  
 > `sys.argv[0]` is the script name.  
-> You can access values of the other parameters by their indices, starting with 1, so `sys.argv[1]` contains 'Joe'  and `sys.argv[2]` contains 'Anita'. You access elements in a list by adding square brackets and the numerical index after the name of the list. 
+> You can access values of the other parameters by their indices, starting with 1, so `sys.argv[1]` contains 'Maria'  and `sys.argv[2]` contains 'Carlos'. You access elements in a list by adding square brackets and the numerical index after the name of the list. 
 > If you wanted to print a message saying these two people are friends, you might write some code like this
 
 
@@ -344,15 +348,15 @@ The user also supplies all the data the script needs on the command line so the 
 
 #### Com que tipo de objeto estou trabalhando?
 
-You have an identifier in your code called `data`. Does it represent a string or a list or a dictionary? Python has a couple of functions that help you figure this out.
+Você tem um identificador no seu código chamado `dados`. Isso representa uma string, uma lista ou um dicionário? Python tem algumas funções que ajudam a descobrir isso.
 
-| Function     | Description                                           |
+| Função       | Descrição                                             |
 | ------------ | ----------------------------------------------------- |
-| `type(data)` | tells you which class your object belongs to          |
-| `dir(data)`  | tells you which methods are available for your object |
-| `id(data)`   | tells you the unique object id                        |
+| `type(dados)` | diz a qual classe seu objeto pertence                 |
+| `dir(dados)`  | diz quais métodos estão disponíveis para o seu objeto |
+| `id(dados)`   | diz qual o identificador único do seu objeto          |
 
-We'll cover `dir()` in more detail later
+Nós cobriremos `dir()` em mais detalhes mais adiante.
 
 ```python
 >>> data = [2,4,6]
