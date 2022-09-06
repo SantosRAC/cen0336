@@ -285,13 +285,13 @@ Collections of data can also be stored in special data types, i.e., tuples, list
 
 #### Dicionário
 
-- Dictionaries are good for storing data that can be represented as a two-column table.
+- Dicionários são bons para armazenar dados que podem ser representados em uma tabela de duas colunas.
 
-- They store unordered collections of key/value pairs.
+- Eles armazenam coleções de dados em pares de chave/valor, sem ordenação específica.
 
-- A dictionary is enclosed in curly braces, and sets of Key/Value pairs are separated by commas 
+- Um dicionário é delimitado por chaves e conjuntos de Chave/Valor separados por vírgula.
 
-- A colon is written between each key and value. Commas separate key:value pairs.
+- Um ponto-e-vírgula é colocado entre cada chave e valor. Vírgulas separam pares de chave:valor.
 
 
 ```python
@@ -299,14 +299,14 @@ Collections of data can also be stored in special data types, i.e., tuples, list
 ```
 
 
-| Key   | Value                                    |
+| Chave |                  Valor                   |
 | ----- | ---------------------------------------- |
 | TP53  | GATGGGATTGGGGTTTTCCCCTCCCATGTGCTCAAGACTGGCGCTAAAAGTTTTGAGCTTCTCAAAAGTC |
 | BRCA1 | GTACCTTGATTTCGTATTCTGAGAGGCTGCTGCTTAGCGGTAGCCCCTTGGTTTCCGTGGCAACGGAAAA |
 
 
 
-#### Command line parameters: A Special Built-in List
+#### Parâmetros de linha de comando: uma lista especial de par
 
 Command line parameters follow the name of a script or program and have spaces between them. They allow a user to pass information to a script on the command line when that script is being run. Python stores all the pieces of the command line in a special list called `sys.argv`. 
 
