@@ -291,7 +291,7 @@ Collections of data can also be stored in special data types, i.e., tuples, list
 
 - Um dicionário é delimitado por chaves e conjuntos de Chave/Valor separados por vírgula.
 
-- Um ponto-e-vírgula é colocado entre cada chave e valor. Vírgulas separam pares de chave:valor.
+- Um sinal de dois-pontos é colocado entre cada chave e valor. Vírgulas separam pares de chave:valor.
 
 
 ```python
