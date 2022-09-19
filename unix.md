@@ -905,42 +905,42 @@ Lembre-se de entrar no **modo de comando** com a tecla `<esc>`
 
 
 
-__Deleting content__
+__Deletando conteúdo__
 
-Remember to enter into **Command Mode** with `<esc>` key
+Lembre-se de entrar no **Modo de Comando** com a tecla '<esc>' 
 
-|key stroke | meaning | 
+|tecla pressionada | significado | 
 |-----------|---------|  
-|`x`        | delete a single character  |   
-|`nx`       | delete n characters (eg 5x deletes five characters)  |  
-|`dd`       | delete the current line  |  
-|`dn`       | d followed by a movement command. Delete to where the movement command would have taken you. (eg d5w means delete 5 words)|  
+|`x`        | deleta um caractere único  |   
+|`nx`       | deleta n caracteres (eg 5x deleta cinco caracteres)  |  
+|`dd`       | deleta a linha atual  |  
+|`dn`       | d seguido por um comando de movimento. Deleta para onde o comando de movimento te levou. (eg d5w significa deletar 5 palavras)|  
 
 
 
-__Undoing__
+__Desfazendo__
 
-Remember to enter into **Command Mode** with `<esc>` key
+Lembre-se de entrar no **Modo de Comando** com a tecla '<esc>' 
 
-|key stroke | meaning | 
+|tecla pressionada | significado | 
 |-----------|---------|  
-| `u` | Undo the last action (you may keep pressing u to keep undoing)  |  
-| `U` | (Note: capital)** - Undo all changes to the current line  |  
+| `u` | Desfaz a última ação (você pode manter u pressionado para continuar desfazendo)  |  
+| `U` | (Nota: capital)** - Desfaz todas as mudanças na linha atual  |  
 
 
 
-#### Other Useful Tips
+#### Outras dicas úteis
 
-|key stroke | meaning | 
+|tecla pressionada | significado | 
 |-----------|---------|  
-| `:set number` | display line numbers | 
-| `:set nonumber` | turn off line numbers |  
-| `:/[search text]` | find [this text] in your file |  
-| `n` | go to next occurance of your search result | 
+| `:set number` | exibe números de linha | 
+| `:set nonumber` | desliga os números de linha |  
+| `:/[search text]` | encontra [esse texto] em seu arquivo |  
+| `n` | vai até a próxima ocorrência de seu resultado de busca | 
 
   
 
-#### Mug of vi
+#### Caneca do vi
 
 
 
@@ -953,69 +953,69 @@ Remember to enter into **Command Mode** with `<esc>` key
 
 
 
-## Git for Beginners
+## Git para iniciantes
 
-Git is a tool for managing files and versions of files. It is a _Version Control System_. It allows you to keep track of changes. You are going to be using Git to manage your course work and keep your copy of the lecture notes and files up to date. Git can help you do very complex task with files. We are going to keep it simple.
-
-
-### The Big Picture.
+Git é uma ferramenta para gerenciar arquivos e versões de arquivos. é um _Sistema de Controle de Versão_. Ela te permite acompanhar as alterações. Você estará utilizando o Git para gerenciar seu trabalho de curso e manter sua cópia das notas de aula e arquivar nos dados. Git pode ajudar você a fazer tarefas muito difíceis com arquivos. Nós vamos vamos mantê-las simples.
 
 
-A Version Control System is good for Collaborations, Storing Versions, Restoring Previous Versions, and Managing Backups.
-
-#### Collaboration  
-
-Using a Version Control System makes it possible to edit a document with others without the fear of overwriting someone's changes, even if more than one person is working on the same part of the document. All the changes can be merged into one document. These documents are all stored one place. 
+### A maior figura.
 
 
-#### Storing Versions 
+Um Sistema de Controle de Verões é bom para colaborações, versões de armazenamento, restauração de versões anteriores, e gerenciar Backups.
 
-A Version Control System allows you to save versions of your files and to attach notes to each version. Each save will contain information about the lines that were added or altered.
+#### Colaboração 
 
-#### Restoring Previous Versions  
+Usando um Sistema de Controle de Versões torna possível editar um documento com outros sem o medo de sobrescrever as mudanças de alguém, ainda que mais de uma pessoa esteja trabalhando na mesma parte do documento. Todas as mudanças podem ser mescladas em um documento. Estes documentos são todos armazenados em um lugar. 
 
-Since you are keeping track of versions, it is possible to revert all the files in a project or just one file to a previous version.
+
+#### Armazenando versões 
+
+Um Sistema de Controle de Versões permite que você salve versões de seus arquivos e anexe notas para cada versão. Cada salvamento vai conter informação sobre as linhas que são adicionadas ou alteradas.
+
+#### Restaurando Versões Anteriores 
+
+Desde que você matém o rastreamento das versões, é possível reverter todos os arquivos de um projeto ou apenas um arquivo para uma versão anterior.
 
 
 #### Backup  
 
-A Version Control System makes it so that you work locally and sync your work remotely. This means you will have a copy of your project on your computer and the Version Control System Server you are using.
+Um Sistema de Controle de Versões faz com que você trabalhe localmente e sincronize seu trabalho remotamente. Isso significa que você terá uma cópia de seu projeto em seu computador e o Servidor do Sistema de Controle de Versões que você está usando.
 
-#### The Details
+#### Os detalhes
 
-git is the Version Control System we will be using for tracking changes in our files.
+git é o Sistema de Controle de Versões que usaremos para monitorar mudanças em nossos arquivos.
 
-[GitHub](https://github.com/) is the Version Control System Server we will be using. They provide free account for all public projects.
+[GitHub](https://github.com/) é a o Servidor do Sistema de Controle de Versões que estaremos utilizando. Eles providenciam contas gratuitas para quaisquer projetos públicos.
 
 
-### The Basics
+### O Básico
 
-Usually you have a local copy of your project/repository and a remote copy. The __local__ repository is stored on your computer and the __remote__ is on a online service like GitHub.
-
+Normalmente você possui cópias locais de seu projeto/repositório e uma cópia remota. O repositório __local__ é armazenado em seu computador e o __remoto__ fica em um serviço online como o GitHub.
+       
 ![Relationship between local and remote repositories](images/git_remotes.png)
 
-You can use a web browser to interact with the remote server (gitHub) and the terminal to interact with the local repository.
+Você pode usar o buscador da web para interagir com o servidor remoto (github) e o terminal para interagir com o repositório local.
 
-### Creating a new repository 
+### Criando um novo repositório 
 
-A repository is a project that contains all of the project files, and stores each file's revision history. Repositories can have multiple collaborators. Repositories usually have two components, one __remote__ and one __local__.
-
-
-Follow Steps 1 and 2 to create the __remote repository__.   
-
-Follow Step 3 to create your __local repository__ and **link it** to the __remote repository__.   
+Um repositório é um projeto que contém todos os arquivos do projeto, e guarda cada revisão histórica de arquivos, Repositórios podem ter múltiplos colaboradores. Repositórios normalmente possuem dois componentes, um __remoto__ e outro __local__.
 
 
-1. Navigate to GitHub --> Create Account / Log In --> Go To Repositories --> Click 'New'  
+Siga os passo 1 e 2 para criar o __repositório remoto__.   
+
+Siga o passo 3 para criar seu __repositório local__ e **conectá-lo** ao __repositório remoto__.   
+
+
+1. Navegue para GitHub --> Create Account / Log In --> Vá para Repositories --> Clique 'New'  
 
   ![To create a new repository click the 'New' Button in the top right corner.](images/github-newRepoButton.png)  
 
-2. Add a name (i.e., PFB_problemsets) and a description (i.e., Solutions for PFB Problem Sets) and click "Create Repository"  
+2. Adicione um nome (i.e., PFB_problemsets) e uma descrição (i.e., Solutions for PFB Problem Sets) e clique "Create Repository"  
 
   ![Fill in the form and click the 'Create Repository Button'](images/github-newRepoForm.png)  
 
 
-3. Create a directory on your computer, navigate into it, and then and follow the instructions provided.  
+3. Crie um diretório em seu computador, navegue dentro dele, depois siga as instruções fornecidas.  
 
   ![Create a directory on your computer and follow these instructions.](images/github-newRepoInstructions.png)  
     
@@ -1023,13 +1023,13 @@ Follow Step 3 to create your __local repository__ and **link it** to the __remot
     
 
 
-The new local repository consists of three "trees" maintained by git. The first one is your "Working Directory" which holds the actual files. the second one is the "Index" which acts as a staging area and finally the "HEAD" which points to the last commit you've made.
+O novo repositório local consiste em três "árvores" mantidas por git. A primeira é seu "Working Directory" que mantém os arquivos atuais. O segundo é o "Index" que atua como área de preparação e finalmente a "HEAD" que aponta para o úlitmo envio que você fez.
 
-Every git local repository has three main elements called _trees_:
-1. The _Working Directory_ contains your files
-2. The _Index_ is the staging area
-3. The _HEAD_ points to the last commit you made.
-> There are a few new words here. We will explain them as we go
+Todo repositório local git tem três elementos prinicpais chamados _árvores (trees)_:
+1. O _Working Directory_ contém seus arquivos
+2. O _Index_ é a área de preparação
+3. O _HEAD_ Aponta para o último envio que você fez.
+> Aqui estão algumas palavras novas. Nós as explicaremos posteriormente
 
 
 
@@ -1039,100 +1039,100 @@ Every git local repository has three main elements called _trees_:
 
 
 
-__Command Review__
+__Revendo os Comandos__
 
 
-| command                                 | description                              |
+| comando                                 | descrição                              |
 | --------------------------------------- | ---------------------------------------- |
-| `git init`                              | Creates your new local repository with the three trees (local machine) |
-| `git remote add remote-name URL`        | Links your local repository to a __remote__ repository that is often named _origin_ and is found at the given URL |
-| `git add filename`                      | Propose changes and add file(s) with changes to the index or staging area (local machine) |
-| `git commit -m 'message'`               | Confirm or commit that you really want to add your changes to the HEAD (local machine) |
-| `git push -u remote-name remote-branch` | Upload your committed changes in the HEAD to the specified remote repository to the specified branch |
+| `git init`                              | Cria seu novo repositório local com as três árvores (máquina local) |
+| `git remote add remote-name URL`        | Conecta seu repositório local para um repositório __remoto__ que é chamado de _origin_ e é encontrado na URL dada |
+| `git add filename`                      | Propõe mudanças e adiciona arquivo(s) com mudanças para o index ou área de preparação (máquina local) |
+| `git commit -m 'message'`               | Confirma ou envia que você realmente quer adicionar suas mudanças para o HEAD (máquina local) |
+| `git push -u remote-name remote-branch` | Envia suas mudanças confirmadas na HEAD para o repositório remoto especificado e o ramo específico |
 
 
 
-__Follow Me__
+__Me siga__
 
-Create a **local** repository that is linked to a **remote**. `git remote add` connects your local to the remote. Before this command the local will know nothing about your remote and vice versa. 
+Cria um repositório **local** que é conectado a um **remoto**. 'git remote add' conecta seu local ao remoto. Antes deste comando o local não saberá nada sobre o remoto e vice versa. 
 
-1. Create a new remote repository on github.
-2. Follow all instructions given to you on github.
+1. Cria um novo repositório remoto no github.
+2. Siga todas as instruções fornecidas a você no github.
 
-Add some files to your new repository:
+Adicion alguns arquivos para seu novo repositório:
 
-3. Change directory to your local repository
-4. Create a new file with vi: `vi git_exercises.txt`
-5. Add a line of text to the new file.
-6. Save `:w` and Exit `:q`
-7. (Add) Stage your changes. `git add git_exercises.txt`
-8. (Commit) Become sure you want your changes. `git commit -m 'added a line of text'`
-9. (Push) Sync/Upload your changes to the __remote__ repository. `git push origin master`
-
-
-That is all there is to it! There are more complicated things you can do, but we won't get into those. You will know when you are ready to learn more about git when you figure out there is something you want to do but don't know how. There are thousands of online tutorials for you to search and follow.
+3. Muda diretório para seu repositório local
+4. Cria um novo arquivo com o vi: `vi git_exercises.txt`
+5. Adiciona uma linha de texto para o novo arquivo.
+6. Salva `:w` e sai `:q`
+7. (Add) Propõe suas mudanças. `git add git_exercises.txt`
+8. (Commit) Se certifica que você quer suas mudanças. `git commit -m 'added a line of text'`
+9. (Push) Sincroniza/Upload suas mudanças para o repositório __remoto__. `git push origin master`
 
 
-#### Keeping track of differences between local and remote repositories
+Estas são todas as funcionalidades! Existem mais algumas coisas complicadas de se fazer, mas não iremos nos adentrar, Você saberá quando estiver pronto para aprender mais sobre git quando descobrir algo que você quer fazer mas não sabe como. Existem milhares de tutoriais online para você pesquisar e seguir.
 
-If you are ever wondering what do you need to add to your remote repository use the `git status` command. This will provide you with a list of files that have been modified, deleted, and those that are untracked. Untracked files are those that have never been added to the staging area with `git add`
 
-| command                                 | description                              |
+#### Mantendo o monitoramento de diferenças entre repositórios locais e remotos
+
+Se você pensa no que você precisa adicionar em seu repositório remoto use o comando `git status`. Isso irá fornecer uma lista de arquivos que foram modificados, deletados, e aqueles que não são rastreados. Arquivos não rastreados sçao aqueles que nunca foram adicionados a fase de preparação com o `git add`
+
+| comando                                 | descrição                              |
 | --------------------------------------- | ---------------------------------------- |
-| `git status` | To see a list of files that have been modified, deleted, and those that are untracked |
+| `git status` | Para ver a list dos arquivos que foram modificados, deletados, e aqueles que não são rastreados |
 
 
-#### Deleting and moving files
+#### Deletando e movendo arquivos
 
-|command | description |
+|comando | descrição |
 | ------ |-------------|
-| `git rm` | Remove files from the index, or from the working tree and from the index |
-| `git mv` | Move or rename a file, a directory, or a symlink |
+| `git rm` | Remove arquivos do index, ou da working tree e do index |
+| `git mv` | Move ou renomeia um arquivo, um diretório, ou um symlink |
 
-> these two commands will update your index as well as change your local files. If you use just `rm` or `mv` you will have to update the index with add/commit. 
+> Estes dois comandos vão atualizar seu index assim como alterar seus arquivos locais. Se você usar apenas `rm` ou `mv` você vai ter que atualizar o index com add/commit. 
 
-#### Get a copy of file on your remote
+#### Conseguir uma cópia do arquivo em seu remoto
 
-Sometimes you really really mess up a file, or you delete it by mistake. You have a small heart attack then you remember that you have a good copy in your remote github repo. How do you get it in your local repo?
+Às vezes você acaba bagunçando um arquivo, ou deletando sem querer. Porém existe uma cópia do github remoto. Como acessá-la?
 
 ```
 git checkout <filename>
 ```
-> Whew, what a life saver!  
+> Whew, que salva vidas!  
 
 
-#### Tips
+#### Dicas
 
-1. Adding files over 50M will break your git repo. Don't add large files. Don't blindly use `git add -A` when there might be large files present. You will be very sad if you do.  
-2. Don't clone a git repository into another git repository. This makes git really unhappy. 
-3. Don't be afraid to ask your questions on Google. git can be complicated and a lot of people ask a lot of questions that get answered in online forums, or GitHub will have a tutorial
+1. Adicionando arquivos acima de 50M vai quebrar seu git repo. Não adicione arquivos largos. Não use `git add -A` quando existem arquivos grandes dentro. Você não quer isso. 
+2. Não clone o repositório git dentro de outro. Isso prejudica o git. 
+3. Não tenha medo de perguntar coisas ao google. git pode ser complicado e várias pessoas fazem perguntas que são respondidas em fórums online, ou GitHub terá um tutorial
 
 
-### Cloning a Repository
+### Clonando um Repositório
 
-Sometimes you want to download and use someone else's repository. This is different form above where we created our own repository. This is just a copy of someone else's repository
+Algumas vezes você quer baixar e usar o repositório de alguém. Isso é uma forma diferente de criar o próprio repositório. É apenas uma cópia do repositório de alguém
 
-Let's clone the course material.
+Vamos clonar o material do curso.
 
-Let's do it!
+Vamos lá!
 
-1. Go to our [PFB GitHub Repository](https://github.com/prog4biol/pfb2019)
-2. Click the 'Clone or Download' Button
-3. Copy the URL
+1. Vá para nosso [PFB GitHub Repository](https://github.com/prog4biol/pfb2019)
+2. Clique no botão de 'Clone or Download'
+3. Copie o URL
   ~[Clone PFB2019](images/github-clone.png)
-4. _Clone_ the repository to your local machine
+4. _Clone_ o repositório para sua máquina local
    `git clone https://github.com/prog4biol/pfb2019.git`
 
-Now you have a copy of the course material on your computer!
+Agora você tem uma cópia do material do curso no seu computador!
 
-#### Bringing Changes in from the Remote Repository to your Local Repository
+#### Trazendo mudanças do repositório remoto para o local
 
-If changes are made to any of these files in the online, remote repository, and you want to update your local copy, you can _pull_ the changes.
+Se mudanças são feitas em quaisquer arquivos online, remotos, e você quer atualizar sua cópia local você pode _pull_ as mudanças.
 `git pull`  
 
-| command                                 | description                              |
+| comando                                 | descrição                              |
 | --------------------------------------- | ---------------------------------------- |
-| `git pull` | To get changes from the remote into your local copy|
+| `git pull` | Para conseguir mudanças do remoto para sua cópia local |
 
 
 
@@ -1141,16 +1141,16 @@ If changes are made to any of these files in the online, remote repository, and 
 
 
 
-#### Links to *slightly* less basic topics  
+#### Links para tópicos *levemente* menos básicos  
 
-You will KNOW if you need to use these features of git.
+Você saberá se precisar usar quaisquer desses recurso do git.
 
-1. [View Commit History](https://git-scm.com/book/en/v2/Git-Basics-Viewing-the-Commit-History)
-2. [Resolving Merge Conflicts](https://help.github.com/articles/resolving-a-merge-conflict-using-the-command-line/)
-3. [Undoing Previous Commits](https://github.com/blog/2019-how-to-undo-almost-anything-with-git)
+1. [Ver o histórico de Commit](https://git-scm.com/book/en/v2/Git-Basics-Viewing-the-Commit-History)
+2. [Resolvendo problemas de mesclagem](https://help.github.com/articles/resolving-a-merge-conflict-using-the-command-line/)
+3. [Desfazendo Commits anteriores](https://github.com/blog/2019-how-to-undo-almost-anything-with-git)
 
 ---
 
-### [Link To Unix 2 Problem Set](problemsets/Unix_02_problemset.md)
+### [Link para o conjunto de problemas Unix 2](problemsets/Unix_02_problemset.md)
 
 ---
