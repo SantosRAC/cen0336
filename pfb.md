@@ -328,10 +328,10 @@ Isso acontece dentro do script:
 
 > o nome do script 'amigos.py' e as strings 'Maria' e 'Carlos' aparecem na lista chamada `sys.argv`.  
 
-> These are the command line parameters, or arguments you want to pass to your script.  
-> `sys.argv[0]` is the script name.  
-> You can access values of the other parameters by their indices, starting with 1, so `sys.argv[1]` contains 'Maria'  and `sys.argv[2]` contains 'Carlos'. You access elements in a list by adding square brackets and the numerical index after the name of the list. 
-> If you wanted to print a message saying these two people are friends, you might write some code like this
+> Estes são os parâmetros da linha de comando, ou argumentos que queira passar para o script. 
+> `sys.argv[0]` é o nome do script.
+> Você pode acessar valores dos outros parâmetros pelos seus índices, começando com 1, então `sys.argv[1]` contém 'Maria' e `sys.argv[2]` contém 'Carlos'. Você acessa elementos em uma lista adicionando colchetes e o ínidce numérico depois do nome da lista.  
+> Se você quisesse imprimir uma mensagem dizendo que estas duas pessoas são amigas, você poderia escrever um código como este
 
 
 ```python
