@@ -379,31 +379,30 @@ Nós cobriremos `dir()` em mais detalhes mais adiante.
 
 ## Python 2
 
-### Operators
+### Operadores
 
-An operator in a programming language is a symbol that tells the compiler or interpreter to perform specific mathematical, relational or logical operation and produce a result. Here we explain the concept of operators.
+Um operador em uma linguagem de programação é um símbolo que faz o cumpridor ou intérprete para performar operações matemáticas, relativas ou lógicas e produzir um resultado. Aqui explicaremos o conceito de operadores. 
 
-#### Arithmetic Operators  
+#### Operadores aritméticos  
 
-In Python we can write statements that perform mathematical calculations. To do this we need to use operators that are specific for this purpose. Here are arithmetic operators:
+Em Python nós podemos escrever declarações que performam cálculos matemáticos. Para fazer isso nós precisamos usar operadores que são específicos para este propósito. Aqui estão operadores aritméticos: 
 
-
-| Operator | Description                                                  | Example          | Result      |
+| Operador | Descrição                                                    | Exemplo          | Resultado   |
 | -------- | ------------------------------------------------------------ | ---------------- | ----------- |
-| `+`      | Addition                                                     | `3+2`            | 5           |
-| `-`      | Subtraction                                                  | `3-2`            | 1           |
-| `*`      | Multiplication                                               | `3*2`            | 6           |
-| `/`      | Division                                                     | `3/2`            | 1.5         |
-| `%`      | Modulus (divides left operand by right operand and returns the remainder) | `3%2`            | 1           |
-| `**`     | Exponent                                                     | `3**2`           | 9           |
-| `//`     | Floor Division (result is the quotient with digits after the decimal point removed. If one of the operands is negative, the result is floored, i.e., rounded away from zero | `3//2`  `-11//3` | 1        -4 |
+| `+`      | Adição                                                       | `3+2`            | 5           |
+| `-`      | Subtração                                                    | `3-2`            | 1           |
+| `*`      | Multiplicação                                                | `3*2`            | 6           |
+| `/`      | Divisão                                                      | `3/2`            | 1.5         |
+| `%`      | Módulo (divide o operador da esquerda pelo da direita e retorna o lembrete) | `3%2`            | 1           |
+| `**`     | Expoente                                                     | `3**2`           | 9           |
+| `//`     | Divisão de piso (resultado é o quociente com os dígitos depois do ponto removidos). | `3//2`  `-11//3` | 1        -4 |
 
 
-__Modulus__
+__Módulo__
 
-![3 divided by 2 is 1 with a remainder of 1. Modulus returns the remainer](images/modulus.png)
+![3 dividido por 2 é 1 com um restante de 1. Módulo retorna o restatne](images/modulus.png)
 
-__Floor examples__
+__Exemplos de piso__
 
 ```python
 >>> 3/2
@@ -422,11 +421,11 @@ __Floor examples__
 
 
 
-#### Assignment Operators  
+#### Operadores de atribuição  
 
-We use assignment operators to assign values to variables. You have been using the `=` assignment operator. Here are others:
+Nós usamos operadores de atribuição para atribuir valores para variáveis. Você tem usado `=` como operador de atribuição. aqui estão outros: 
 
-| Operator | Equivalent to          | Example                     | result evaluates to |
+| Operador | Equivalente a          | Exemplo                     | resultado assume o valor |
 | -------- | ---------------------- | --------------------------- | ------------------- |
 | `=`      | `a = 3`                | `result = 3`                | 3                   |
 | `+=`     | `result = result + 2`  | `result = 3 ; result += 2`  | 5                   |
@@ -441,44 +440,44 @@ We use assignment operators to assign values to variables. You have been using t
 
 
 
-#### Comparison Operators 
+#### Operadores de comparação
 
-These operators compare two values and returns true or false.  
+Estes operadores comparam dois valores e retornam verdadeiro ou falso.   
 
 
-| Operator | Description           | Example  | Result |
+| Operador | Descrição             | Exemplo  | Resultado |
 | -------- | --------------------- | -------- | ------ |
-| `==`     | equal to              | `3 == 2` | False  |
-| `!=`     | not equal             | `3 != 2` | True   |
-| `>`      | greater than          | `3 > 2`  | True   |
-| `<`      | less than             | `3 < 2`  | False  |
-| `>=`     | greater than or equal | `3 >= 2` | True   |
-| `<=`     | less than or equal    | `3 <= 2` | False  |
+| `==`     | equal to              | `3 == 2` | Falso  |
+| `!=`     | not equal             | `3 != 2` | Verdadeiro  |
+| `>`      | greater than          | `3 > 2`  | Verdadeiro  |
+| `<`      | less than             | `3 < 2`  | Falso  |
+| `>=`     | greater than or equal | `3 >= 2` | Verdadeiro  |
+| `<=`     | less than or equal    | `3 <= 2` | Falso  |
 
 
 
-#### Logical Operators
+#### Operadores lógicos
 
-Logical operators allow you to combine two or more sets of comparisons. You can combine the results in different ways. For example you can 1) demand that all the statements are true, 2) that only one statement needs to be true, or 3) that the statement needs to be false.
+Operadores lógicos permitem combinar dois ou mais conjuntos de comparações. Você pode combinar os resultados de diferentes formas. Por exemplo você pode 1) querer que todos as declarações sejam verdade, 2) que apenas uma declaração precise ser verdadeira, ou 3) que a declaração precise ser falsa.
 
-| Operator | Description                              | Example        | Result |
+| Operador | Descrição                                | Exemplo        | Resultado |
 | -------- | ---------------------------------------- | -------------- | ------ |
-| `and`    | True if left operand is True and right operand is True | `3>=2 and 2<3` | True   |
-| `or`     | True if left operand is True or right operand is True | `3==2 or 2<3`  | True   |
-| `not`    | Reverses the logical status              | `not False`    | True   |
+| `and`    | Verdadeiro se o operador da esquerda e o da direita forem verdade | `3>=2 and 2<3` | Verdadeiro  |
+| `or`     | Verdadeiro se o operador da esquerda ou o da direita forem verdade | `3==2 or 2<3`  | Falso   |
+| `not`    | Inverte o status lógico           | `not False`    | Verdadeiro  |
 
 
 
-#### Membership Operators   
+#### Operadores de filiação   
 
-You can test to see if a value is included in a string, tuple, or list. You can also test that the value is not included in the string, tuple, or list.
+Você pode testar para ver se o valor é incluído em uma corda, tupla ou lista. Você pode também testar que o valor não está incluso na corda, tupla ou lista. 
 
-| Operator | Description                              |
+| Operador | Descrição                                |
 | -------- | ---------------------------------------- |
-| `in`     | True if a value is included in a list, tuple, or string |
-| `not in` | True if a value is absent in a list, tuple, or string |
+| `in`     | Verdadeiro se o valor é incluso em uma lista, tupla ou corda |
+| `not in` | Verdadeiro se o valor é ausente em uma lista, tupla ou corda |
 
-For Example:  
+Por Exemplo:  
 ```python
 >>> dna = 'GTACCTTGATTTCGTATTCTGAGAGGCTGCTGCTTAGCGGTAGCCCCTTGGTTTCCGTGGCAACGGAAAA'
 >>> 'TCT' in dna
@@ -497,64 +496,64 @@ False
 
 
 
-#### Operator Precedence
+#### Operador Precedente
 
-Operators are listed in order of precedence. Highest listed first. Not all the operators listed here are mentioned above. 
+Operadores são listados em ordem de precedência. Os maiores listados primeiro. Nem todos operadores listados aqui são mencionados acima. 
 
-| Operator                                 | Description                              |
+| Operador                                 | Descrição                                |
 | ---------------------------------------- | ---------------------------------------- |
-| `**`                                     | Exponentiation (raise to the power)      |
-| `~` `+` `-`                              | Complement, unary plus and minus (method names for the last two are +@ and -@) |
-| `*` `/` `%` `//`                         | Multiply, divide, modulo and floor division |
-| `+` `-`                                  | Addition and subtraction                 |
-| `>>` `<<`                                | Right and left bitwise shift             |
-| `&`                                      | Bitwise 'AND'                            |
-| `^` `\|`                                 | Bitwise exclusive 'OR' and regular 'OR'  |
-| `<=` `<` `>` `>=`                        | Comparison operators                     |
-| `<>` `==` `!=`                           | Equality operators                       |
-| `=` `%=` `/=` `//=` `-=` `+=` `*=` `**=` | Assignment operators                     |
-| `is`                                     | Identity operator                        |
-| `is not`                                 | Non-identity operator                    |
-| `in`                                     | Membership operator                      |
-| `not in`                                 | Negative membership operator             |
-| `not` `or` `and`                         | logical operators                        |
+| `**`                                     | Exponenciação (Eleva o poder)            |
+| `~` `+` `-`                              | Complemento, unário mais e menos (nomes de métodos que os dois últimos são +@ e -@) |
+| `*` `/` `%` `//`                         | Multiplica, divide, módulo e divisão de piso |
+| `+` `-`                                  | Adição e subtração                       |
+| `>>` `<<`                                | Deslocamento parte por parte de direita e esquerda |
+| `&`                                      | Deslocamento 'AND'                       |
+| `^` `\|`                                 | Bitwise exclusivo 'OR' e regular 'OR'    |
+| `<=` `<` `>` `>=`                        | Operadores de comparação                 |
+| `<>` `==` `!=`                           | Operadores de igualdade                  |
+| `=` `%=` `/=` `//=` `-=` `+=` `*=` `**=` | Operadores de atribuição                 |
+| `is`                                     | Operadores de identidade                 |
+| `is not`                                 | Operador de não identidade               |
+| `in`                                     | Operador de filiação                     |
+| `not in`                                 | Operador de filiação negativa            |
+| `not` `or` `and`                         | Operadores lógicos                       |
 
-Note: Find out more about [bitwise operators](https://www.tutorialspoint.com/python/bitwise_operators_example.htm). 
+Nota: Saiba mais a respeito [bitwise operators](https://www.tutorialspoint.com/python/bitwise_operators_example.htm). 
 
-### Truth
-
-
-Lets take a step back... What is truth?  
-
-Everything is true, except for:  
+### Verdade
 
 
-| expression              | TRUE/FALSE |
+Vamos voltar um pouco... O que é verdade?  
+
+Tudo é verdade, exceto por:  
+
+
+| expressão               | VERDADEIRO/FALSO |
 | ----------------------- | ---------- |
-| `0`                     | FALSE      |
-| `None`                  | FALSE      |
-| `False`                 | FALSE      |
-| `''` (empty string)     | FALSE      |
-| `[]` (empty list)       | FALSE      |
-| `()` (empty tuple)      | FALSE      |
-| `{}` (empty dictionary) | FALSE      |
+| `0`                     | FALSO      |
+| `None`                  | FALSO      |
+| `False`                 | FALSO      |
+| `''` (corda vazia)      | FALSO      |
+| `[]` (lista vazia)      | FALSO      |
+| `()` (tupla vazia)      | FALSO      |
+| `{}` (dicionário vazio) | FALSO      |
 
-Which means that these are True:
+O que significa que estes são verdade: 
 
 
-| expression                        | TRUE/FALSE |
+| expressão                         | VERDADEIRO/FALSO |
 | --------------------------------- | ---------- |
-| `'0'`                             | TRUE       |
-| `'None'`                          | TRUE       |
-| `'False'`                         | TRUE       |
-| `'True'`                          | TRUE       |
-| `' '` (string of one blank space) | TRUE       |
+| `'0'`                             | VERDADEIRO |
+| `'None'`                          | VERDADEIRO |
+| `'False'`                         | VERDADEIRO |
+| `'True'`                          | VERDADEIRO |
+| `' '` (corda de um espaço vazio)  | VERDADEIRO |
 
 
 
-#### Use `bool()` to test for truth   
+#### Use `bool()` para testar a verdade    
 
-`bool()` is a function that will test if a value is true.
+`bool()` é uma função que testará se um valor é verdade.
 
 ```python
 >>> bool(True)
@@ -590,26 +589,26 @@ False
 ```
 
 
-### Logic: Control Statements
+### Lógica: Declarações de controle 
 
 
-Control Statements are used to direct the flow of your code and create the opportunity for decision making. The foundation of control statements is building on truth.
+Declarações de controle são usadas para direcionar o fluxo do seu código e criar oportunidade para tomada de decisão. Os fundamentos das declarações de controle são construindo a verdade.
 
-#### If Statement
+#### Declaração If
 
-- Use the `if` Statement to test for truth and to execute lines of code if true.  
-- When the expression evaluates to true each of the statements indented below the `if` statment, also known as the nested statement block, will be executed.
+- Use a declaração `if` para testar a verdade e executar linhas do código caso seja verdade.  
+- Quando a expressão avalia como verdade cada uma das declarações recuadas abaixo da declaração `if`, também conhecidas como o bloco de declarações aninhadas, serão executadas.
 
 
 **if**
 
 ```python
-if expression :
-  statement
-  statement
+expressão if :
+  declaração
+  declaração
 ```
 
-For Example:  
+Por Exemplo:  
 ```python
 dna = 'GTACCTTGATTTCGTATTCTGAGAGGCTGCTGCTTAGCGGTAGCCCCTTGGTTTCCGTGGCAACGGAAAA'
 if 'AGC' in dna:
@@ -622,9 +621,9 @@ found AGC in your dna sequence
 
 **else**
 
-- The`if` portion of the if/else statement behaves as before. 
-- The first indented block is executed if the condition is true.
-- If the condition is false, the second indented else block is executed.
+- A porção `if` da declaração if/else statement se comporta como antes. 
+- O primeiro bloco recuado é executado se a condição é verdadeira. .
+- Se a condição for falsa, o segundo bloco else recuado é executado.
 
 ```python
 dna = 'GTACCTTGATTTCGTATTCTGAGAGGCTGCTGCTTAGCGGTAGCCCCTTGGTTTCCGTGGCAACGGAAAA'
@@ -641,9 +640,9 @@ did not find ATG in your dna sequence
 
 #### if/elif
 
-- The `if` condition is tested as before, and the indented block is executed if the condition is true.
-- If it's false, the indented block following the `elif` is executed if the first `elif` condition is true. 
-- Any remaining `elif` conditions will be tested in order until one is found to be true. If none is true, the `else` indented block is executed.
+- A condição `if` é testada como antes, e o bloco recuado é executado caso a condição for verdadeira.
+- Se for falsa, o bloco recuado seguindo o `elif` é executado se a primeira condição `elif` for verdadeira. 
+- Quaisquer condições restantes `elif` serão testadas em ordem até que uma verdadeira for encontrada. Se nenhuma for, o bloco recuado `else` é executado.
 
 ```python
 count = 60
@@ -665,7 +664,7 @@ Returns:
 60 is greater than 50
 ```
 
-Let's change count to 20, which statement block gets executed?  
+Vamos mudar a contagem para 20, qual declaração será executada?   
 
 ```python
 count = 20
@@ -687,7 +686,7 @@ Returns:
 20 is less than 50
 ```
 
-What happens when count is 50?  
+O que acontece quando a contagem é 50?  
 
 ```python
 count = 50
@@ -712,38 +711,38 @@ Returns:
 
 
 
-### Numbers
+### Números
 
 
-Python recognizes 3 types of numbers: integers, floating point numbers, and complex numbers. 
+Python reconhece 3 tipos de números: inteiros, números de ponto flutuante e números complexos. 
 
-#### integer  
+#### inteiros  
 
-- known as an int
-- an int can be positive or negative
-- and **does not** contain a decimal point or exponent.
+- Conhecidos como int
+- Um int pode ser positivo ou negativo
+- e **não** contém um ponto decimal ou expoente.
 
-#### floating point number  
+#### número de ponto flutuante  
 
-- known as a float
-- a floating point number can be positive or negative
-- and **does** contain a decimal point (`4.875`) or exponent (`4.2e-12`)
+- Conhecido como float
+- Um ponto flutuante pode ser positivo ou negativo
+- E **contém** um ponto decimal (`4.875`) ou expoente (`4.2e-12`)
 
-#### complex number  
+#### número complexo  
 
-- known as complex
-- is in the form of a+bi where bi is the imaginary part.
+- conhecido como complex
+- está na forma de a+bi onde bi é uma parte imaginária.
 
-#### Conversion functions    
+#### Funções de conversão    
 
-Sometimes one type of number needs to be changed to another for a function to be able to do work on it. Here are a list of functions for converting number types:
+As vezes um tipo de número precisa ser mudado por outro para a função poder trabalhar. Aqui está a lista de funções para converter tipos de números:
 
-| function        | Description                              |
+| função          | Descrição                                |
 | --------------- | ---------------------------------------- |
-| `int(x)`        | to convert x to a plain integer          |
-| `float(x)`      | to convert x to a floating-point number  |
-| `complex(x)`    | to convert x to a complex number with real part x and imaginary part zero |
-| `complex(x, y)` | to convert x and y to a complex number with real part x and imaginary part y |
+| `int(x)`        | para converter x para um inteiro simples |
+| `float(x)`      | para converter x para um número de ponto flutuante |
+| `complex(x)`    | para converter x para um número complexo com parte real x e parte imaginária zero |
+| `complex(x, y)` | para converter x e y para um número complexo com parte real x e parte imaginária y |
 
 ```python
 >>> int(2.3)
@@ -757,18 +756,18 @@ Sometimes one type of number needs to be changed to another for a function to be
 ```
 
 
-#### Numeric Functions
+#### Funções numéricas
 
-Here is a list of functions that take numbers as arguments. These do useful things like rounding.
+Aqui está a lista de funções que usam números como argumentos. Elas são úteis como arredondamento.
 
 
 
-| function          | Description                              |
+| função            | Descrição                                |
 | ----------------- | ---------------------------------------- |
-| `abs(x)`          | The absolute value of x: the (positive) distance between x and zero. |
-| `round(x [,n])`   | x rounded to n digits from the decimal point. round() rounds to an even integer if the value is exactly between two integers, so round(0.5) is 0 and round(-0.5) is 0. round(1.5) is 2. **Rounding to a fixed number of decimal places can give unpredictable results.** |
-| `max(x1, x2,...)` | The largest argument is returned |
-| `min(x1, x2,...)` | The smallest argument is returned        |
+| `abs(x)`          | O valor absoluto de x: a distância (positiva) entre x e zero. |
+| `round(x [,n])`   | x arredondado para n dígitos do ponto decimal. round() arredonda para um inteiro se o valor é exatamente entre dois inteiros, então round(0.5) é 0 e round(-0.5) é 0. round(1.5) é 2. **Arredondar para um número fixo de lugares decimais pode fornecer resultados imprevisíveis.** |
+| `max(x1, x2,...)` | O último argumento é retornado           |
+| `min(x1, x2,...)` | O menor argumento é retornado            |
 
 ```python
 >>> abs(2.3)
@@ -796,22 +795,22 @@ Here is a list of functions that take numbers as arguments. These do useful thin
 ```
 
 
-Many numeric functions are not built into the Python core and need to be imported into our script if we want to use them. To include them, at the top of the script type: 
+Muitas funções numéricas não são construídas dentro da central do Python e precisam ser importadas para dentro do script se quisermos usá-las. Para incluir elas, no topo do script digite:
 `import math`
 
-These next functions are found in the math module and need to be imported. To use these functions, prepend the function with the module name, i.e, `math.ceil(15.5)`  
+Estas próximas funções são encontradas no módulo matemático e precisam ser importadas. Para usá-las, preceda a função com o nome do módulo, i.e, `math.ceil(15.5)`  
 
 
-| math.function    | Description                              |
+| math.function    | Descrição                                |
 | ---------------- | ---------------------------------------- |
-| `math.ceil(x)`   | return the smallest integer greater than or equal to x is returned |
-| `math.floor(x)`  | return the largest integer less than or equal to x. |
-| `math.exp(x)`    | The exponential of x: e<sup>x</sup> is returned |
-| `math.log(x)`    | the natural logarithm of x, for x > 0 is returned |
-| `math.log10(x)`  | The base-10 logarithm of x for x > 0 is returned |
-| `math.modf(x)`   | The fractional and integer parts of x are returned in a two-item tuple. |
-| `math.pow(x, y)` | The value of x raised to the power y is returned |
-| `math.sqrt(x)`   | Return the square root of x for x >= 0   |
+| `math.ceil(x)`   | retorna o menor inteiro maior ou igual que x |
+| `math.floor(x)`  | retorna o maior inteiro menor ou igual que x. |
+| `math.exp(x)`    | O exponencial de x: e<sup>x</sup> é retornado |
+| `math.log(x)`    | O logarítmo natural de x, para x > 0 é retornado |
+| `math.log10(x)`  | O logarítmo de base 10 de x para x > 0 é retornado |
+| `math.modf(x)`   | As partes fracionárias e inteiras de x são retornadas em uma tupla de dois itens |
+| `math.pow(x, y)` | O valor de x criado pelo poder y é retornado |
+| `math.sqrt(x)`   | Retorna a raíz quadrada de x para x >= 0   |
 
 
 ```python
@@ -870,24 +869,24 @@ ValueError: math domain error
 1.70293863659264
 ```
 
-### Comparing two numbers
+### Comparando dois números
 
-Oftentimes, it is necessary to compare two numbers and find out if the first number is less than, equal to, or greater than the second.
+Algumas vezes, é necessário comparar dois números e descobrir se o primeiro é menor, igual ou maior que o segundo. 
 
-The simple function `cmp(x,y)` is not available in Python 3. 
+A simples função `cmp(x,y)` não é disponível em Python 3. 
 
-Use this idiom instead:  
+Use este idioma ao invés:  
 ```python
 cmp = (x>y)-(x<y)
 ```
 
-It returns three different values depending on x and y
+Ele retorna três diferentes valores dependendo do x e do y
 
-- if x<y, then -1 is returned
+- se x<y, o -1 é retornado
 
-- if x>y, then 1 is returned
+- se x>y, o 1 é retornado
 
-- x == y, then 0 is returned
+- x == y, o 0 é retornado
 
 ---
 
