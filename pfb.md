@@ -896,24 +896,24 @@ Ele retorna três diferentes valores dependendo do x e do y
 
 ##  Python 3
 
-### Sequences
+### Sequências
 
-In the next section, we will learn about strings, tuples, and lists. These are all examples of python sequences. A sequence of characters `'ACGTGA'`, a tuple `(0.23, 9.74, -8.17, 3.24, 0.16)`, and a list `['dog', 'cat', 'bird']` are sequences of different types of data. We'll see more detail in a bit.
+Na próxima seção, nós iremos aprender sobre as cordas, tuplas, e listas. Todos estes são exemplos de sequências em python. uma sequência de caracteres `'ACGTGA'`, uma tupla `(0.23, 9.74, -8.17, 3.24, 0.16)`, e uma lista `['dog', 'cat', 'bird']` são sequências de diferentes tipos de dados. Veremos mais detalhes em breve.
 
-In Python, a type of object gets operations that belong to that type. Sequences have sequence operations so strings can also use sequence operations. Strings also have their own specific operations.
+Em Python, um tipo de objeto consegue operações que pertencem àquele tipo. Sequências tem operações sequenciais então as cordas podem também usar operações sequenciais. Cordas também possuem suas próprias operações específicas.
 
-You can ask what the length of any sequence is
+Você pode perguntar qual a extensão de qualquer sequência
 
 ```python
->>>len('ACGTGA') # length of a string
+>>>len('ACGTGA') # extensão de uma corda
 6
->>>len( (0.23, 9.74, -8.17, 3.24, 0.16) )   # length of a tuple, needs two parentheses (( ))
+>>>len( (0.23, 9.74, -8.17, 3.24, 0.16) )   # extensão de uma tupla, precisa de dois parênteses (( ))
 5
->>>len(['dog', 'cat', 'bird'])  # length of a list
+>>>len(['dog', 'cat', 'bird'])  # extensão de uma lista
 3
 ```
 
-You can also use string-specific functions on strings, but not on lists and vice versa. We'll learn more about this later on. `rstrip()` is a string method or function. You get an error if you try to use it on a list.
+Você pode também usar funções de cordas específicas, mas não em listas e vice versa. Nós vamos aprender mais sobre isso posteriormente. `rstrip()` é um método de corda ou função. Você obtém um erro se você tentar usar isso em uma lista.
 
 ```python
 >>> 'ACGTGA'.rstrip('A')
@@ -924,57 +924,56 @@ Traceback (most recent call last):
 AttributeError: 'list' object has no attribute 'rstrip'
 ```
 
-### What functions go with my object?
+### Quais funções vão com meu objeto?
 
-How do you find out what functions work with an object? There's a handy function `dir()`. As an example what functions can you call on our string `'ACGTGA'`?
+Como descobrir quais funções servem com um objeto? Existe uma função prática `dir()`. Como um exemplo quais funções você pode acionar em sua corda `'ACGTGA'`?
 
 ```python
 >>> dir('ACGTGA')
 ['__add__', '__class__', '__contains__', '__delattr__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__getnewargs__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__mod__', '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__rmod__', '__rmul__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', 'capitalize', 'casefold', 'center', 'count', 'encode', 'endswith', 'expandtabs', 'find', 'format', 'format_map', 'index', 'isalnum', 'isalpha', 'isdecimal', 'isdigit', 'isidentifier', 'islower', 'isnumeric', 'isprintable', 'isspace', 'istitle', 'isupper', 'join', 'ljust', 'lower', 'lstrip', 'maketrans', 'partition', 'replace', 'rfind', 'rindex', 'rjust', 'rpartition', 'rsplit', 'rstrip', 'split', 'splitlines', 'startswith', 'strip', 'swapcase', 'title', 'translate', 'upper', 'zfill']
 ```
-`dir()` will return all atributes of an object, among them its functions. Technically, functions belonging to a specific class (object type) are called methods.
-You can call `dir()` on any object, most often, you'll use it in the interactive Python shell. 
+`dir()` irá retornar todos os atributos de um objeto, dentre eles estão funções. Tecnicamente, funções pertencentes a uma classe específica (tipo de objeto) são chamadas de métodos.
+Você pode chamar `dir()` em qualquer objeto, mais comumente, você usará isso na esfera interativa do Python.
 
 ### Strings
 
 
-- A string is a series of characters starting and ending with single or double quotation marks.
-- Strings are an example of a Python sequence. A sequence is defined as a positionally ordered set. This means each element in the set has a position, starting with zero, i.e. 0,1,2,3 and so on until you get to the end of the string.
+- Uma corda é uma série de caracteres começando e terminando com marcas de aspas únicas ou duplas.
+- Cordas são um exemplo de uma sequência de Python. Uma sequência é definida como um grupo ordenado posicionalmente. Isso significa que cada elemento no grupo tem uma posição, começando com zero, i.e. 0,1,2,3 e assim até você chegar no final da corda. 
 
-#### Quotation Marks  
+#### Aspas  
 
-- Single (')  
-- Double (")   
-- Triple (''' or """)   
+- Única (')  
+- Dupla (")   
+- Tripla (''' or """)   
 
-Notes about quotation marks:  
+Notas sobre as aspas:  
 
-- Single and double quotes are equivalent.  
-- A variable name inside quotes is just the string identifier, not the value stored inside the variable. `format()` is useful for variable interpolation in python 
-- Triple quotes (single or doubel) are used before and after a string that spans multiple lines.  
+- Aspas únicas e duplas são equivalentes.  
+- O nome de uma variável dentro das sentenças é apenas o identificador da corda, não o valor armazenado dentro da variável. `format()` é útil para interpolação de variáveis em python
+- Sentenças triplas (únicas ou dobradas) são usadas antes e depois de uma corda que abrange múltiplas linhas. 
 
-Use of quotation examples:  
+Uso de exemplos das aspas:  
 
 ```python
-word = 'word'
-sentence = "This is a sentence."
-paragraph = """This is a paragraph. It is
-made up of multiple lines and sentences. And goes
-on and on.
+palavra = 'word'
+sentença = "This is a sentence."
+parágrafo = """This is a paragraph. Isso é feito de múltiplas linhas e sentenças. 
+E assim vai.
 """
 ```
 
-#### Strings and the `print()` function
+#### Cordas e a função `print()` 
 
-We saw examples of `print()` earlier. Lets talk about it a bit more.  `print()` is a function that takes one or more comma-separated arguments.
+Nós vimos exemplos de `print()` antes. Vamos conversar sobre isso um pouco mais. `print()` é uma função que assume um ou mais argumentos separados por vírgulas.
 
-Let's use the `print()` function to print a string.  
+Vamos usar a função `print()` para imprimir uma corda.  
 ```python
 >>>print("ATG")  
 ATG
 ```
 
-Let's assign a string to a variable and print the variable.
+Vamos atribuir uma corda a uma variável e imprimir a variável.
 ```python
 >>>dna = 'ATG'
 ATG
@@ -982,23 +981,23 @@ ATG
 ATG
 ```
 
-What happens if we put the variable in quotes?  
+O que acontece se nós colocarmos a variável nas sentenças?  
 ```python
 >>>dna = 'ATG'
 ATG
 >>> print("dna")
 dna
 ```
-> The literal string 'dna' is printed to the screen, not the contents 'ATG'
+> A corda literal 'dna' é impressa na tela, não os conteúdos 'ATG'
 
-Let's see what happens when we give `print()` two literal strings as arguments.  
+Vamos ver o que acontece quando nós demos `print()` em duas cordas literais como argumentos.  
 ```python
 >>> print("ATG","GGTCTAC")
 ATG GGTCTAC
 ```
-> We get the two literal strings printed to the screen separated by a space
+> Nós conseguimos as duas cordas literais impressas na tela separadas por um espaço
 
-What if you do not want your strings separated by a space? Use the concatenation operator to concatenate the two strings before or within the `print()` function. 
+E se vocÊ não quiser suas cordas separadas por um espaço? use o operador concatenação para concatenar as duas cordas antes ou dentro da função `print()`. 
 ```python
 >>> print("ATG"+"GGTCTAC")
 ATGGGTCTAC
@@ -1007,23 +1006,23 @@ ATGGGTCTAC
 >>> print(combined_string)
 ATGGGTCTAC
 ```
-> We get the two strings printed to the screen without being separated by a space.  
-> You can also use this
+> Nós conseguimos duas cordas impressas na tela sem ser separadas por um espaço.
+> Você pode também usar isso
 ```python
 >>> print('ATG','GGTCTAC',sep='')
 ATGGGTCTAC
 ```
 
-Now, lets print a variable and a literal string.
+Agora, vamos imprimir uma variável e uma corda literal.
 ```python
 >>>dna = 'ATG'
 ATG
 >>> print(dna,'GGTCTAC')
 ATG GGTCTAC
 ```
-> We get the value of the variable and the literal string printed to the screen separated by a space
+> Nós conseguimos o valor da variável e a corda literal impressa na tela separada por um espaço
 
-How would we print the two without a space?
+Como poderíamos imprimir os dois sem um espaço?
 ```python
 >>>dna = 'ATG'
 ATG
@@ -1031,7 +1030,7 @@ ATG
 ATGGGTCTAC
 ```
 
-Something to think about: Values of variables are variable. Or in other words, they are mutable or changeable.  
+Algo para se pensar sobre: valores de variáveis são variáveis. Em outras palavras, eles são mutáveis e alteráveis.  
 ```python
 >>>dna = 'ATG'
 ATG
@@ -1042,13 +1041,13 @@ TTT
 >>> print(dna)
 TTT
 ```
-> The new value of the variable 'dna' is printed to the screen when `dna` is an argument for the `print()` function.
+> O novo valor da variável 'dna' é impresso no visor quando `dna` é um argumento para a função `print()`.
 
-#### `print()` and Common Errors
+#### `print()` e erros comuns
 
-Let's look at the typical errors you will encounter when you use the `print()` function.
+Vamos olhar os erros típicos que você encontrará quando usar a função `print()`.
 
-What will happen if you forget to close your quotes?
+O que acontecerá se você esquecer de fechar suas sentenças?
 ```
 >>> print("GGTCTAC)
   File "<stdin>", line 1
@@ -1056,16 +1055,16 @@ What will happen if you forget to close your quotes?
                   ^
 SyntaxError: EOL while scanning string literal
 ```
-> We get a 'SyntaxError' if the closing quote is not used
+> Nós obtemos um'SyntaxError' se a sentença de encerramento não for usada.
 
-What will happen if you forget to enclose a string you want to print in quotes?
+O que acontecerá se você se esquecer de incluir uma corda que você quer imprimir nas sentenças?
 ```python
 >>> print(GGTCTAC)
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
 NameError: name 'GGTCTAC' is not defined
 ```
-> We get a 'NameError' when the literal string is not enclosed in quotes because Python is looking for a variable with the name GGTCTAC
+> Nós obtemos um 'NameError' quando a corda literal não for inclusa nas sentenças porque o Python está procurando uma variável com o nome GGTCTAC
 
 ```python
 >>> print "boo"
@@ -1074,32 +1073,32 @@ NameError: name 'GGTCTAC' is not defined
               ^
 SyntaxError: Missing parentheses in call to 'print'
 ```
-In python2, the command was `print`, but this changed to `print()` in python3, so don't forget the parentheses!
+Em python2, o comando era `print`, mas isso mudou para `print()` em python3, então não se esqueça dos parênteses!
 
-#### Special/Escape Characters
+#### Caracteres especiais e de escape
 
-How would you include a new line, carriage return, or tab in your string?  
+Como você incluiria uma nova linha, retorno de transporte, ou tab em sua corda?  
 
-| Escape Character | Description     |
+| Caractere de escape | Descrição     |
 | ---------------- | --------------- |
-| \\n              | New line        |
-| \\r              | Carriage Return |
+| \\n              | Nova linha      |
+| \\r              | Retorno de transporte |
 | \\t              | Tab             |
 
 
-Let's include some escape characters in our strings and `print()` functions.
+Vamos incluir alguns caracteres de escape em suas cordas e funções `print()`.
 ```python
 >>> string_with_newline = 'this sting has a new line\nthis is the second line'
 >>> print(string_with_newline)
 this sting has a new line
 this is the second line
 ```
-> We printed a new line to the screen
+> Nós imprimimos uma nova linha na tela
 
-`print()` adds spaces between arguments and a new line at the end for you. You can change these with `sep=` and `end=`. Here's an example:
+`print()` adiciona espaços entre argumentos e uma nova linha ao final. Você pode mudar isso com `sep=` e `end=`. Aqui está um exemplo:
 `print('one line', 'second line' , 'third line', sep='\n', end = '')`
 
-A neater way to do this is to express a multi-line string enclosed in triple quotes (""").
+Uma forma mais limpa para fazer isso é expressar uma corda de múltiplas linhas inclusa em aspas triplas (""").
 ```python
 >>> print("""this string has a new line
 ... this is the second line""")
@@ -1107,15 +1106,15 @@ this string has a new line
 this is the second line
 ```
 
-Let's print a tab character (\t).
+Vamos imprimir um caractere tab (\t).
 ```python
 >>> line = "value1\tvalue2\tvalue3"
 >>> print(line)
 value1	value2	value3
 ```
-> We get the three words separated by tab characters. A common format for data is to separate columns with tabs like this.
+> Nós obtemos as três palavras separadas por caracteres tab. Um formato comum para dados é separar colunas com tabs como isso.
 
-You can add a backslash before any character to force it to be printed as a literal. This is called 'escaping'. This is only really useful for printing literal quotes ' and " 
+Você pode adicionar uma barra invertida antes de qualquer caractere para forçar de ser impresso como um literal. Isso é chamado 'escaping'. Só é realmente útil para imprimir sentenças literais ' and " 
 
 ```python
 >>> print('this is a \'word\'')  # if you want to print a ' inside '...'
@@ -1123,15 +1122,15 @@ this is a 'word'
 >>> print("this is a 'word'") # maybe clearer to print a ' inside "..."
 this is a 'word'
 ```
-> In both cases actual single quote character are printed to the screen
+> Em ambos os casos a sentença atual única é impressa na tela 
 
-If you want every character in your string to remain exactly as it is, declare your string a raw string literal with 'r' before the first quote. This looks ugly, but it works.
+Se você quiser todos caracteres em sua corda para permanecer exatamente como são, declare sua corda uma corda crua literal com 'r' antes da primeira sentença. Isso parece feio, mas funciona.
 ```python
 >>> line = r"value1\tvalue2\tvalue3"
 >>> print(line)
 value1\tvalue2\tvalue3
 ```
-> Our escape characters '\t' remain as we typed them, they are not converted to actual tab characters.
+> Nossos caracteres de escape '\t' declare como nós digitamos, eles não são convertidos para caracteres tab de fato.
 
 #### Concatenation
 
