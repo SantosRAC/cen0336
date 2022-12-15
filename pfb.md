@@ -935,7 +935,7 @@ Como descobrir quais funções servem com um objeto? Existe uma função prátic
 `dir()` irá retornar todos os atributos de um objeto, dentre eles estão funções. Tecnicamente, funções pertencentes a uma classe específica (tipo de objeto) são chamadas de métodos.
 Você pode chamar `dir()` em qualquer objeto, mais comumente, você usará isso na esfera interativa do Python.
 
-### Strings
+### Cordas
 
 
 - Uma corda é uma série de caracteres começando e terminando com marcas de aspas únicas ou duplas.
@@ -1132,9 +1132,9 @@ value1\tvalue2\tvalue3
 ```
 > Nossos caracteres de escape '\t' declare como nós digitamos, eles não são convertidos para caracteres tab de fato.
 
-#### Concatenation
+#### Concatenação
 
-To concatenate strings use the concatenation operator '+'  
+Para concatenar cordas use o operador de concatenação '+'  
 
 ```python
 >>> promoter= 'TATAAA'
@@ -1144,11 +1144,11 @@ To concatenate strings use the concatenation operator '+'
 >>> print(dna)
 TAGCTATATAAAATCATAAT
 ```
-> The concatenation operator can be used to combine strings. The newly combined string can be stored in a variable. 
+> O operador de concatenação pode ser usado para combinar cordas. A nova combinação de cordas pode ser armazenada em uma variável. 
 
-#### The difference between string + and integer +
+#### A diferença entre a corda + e o integrador +
 
-What happens if you use `+` with numbers (these are integers or ints)?
+O que acontece se você usar `+` com números (estes são inteiros ou ints)?
 
 ```python
 >>> 4+3
@@ -1156,18 +1156,18 @@ What happens if you use `+` with numbers (these are integers or ints)?
 
 ```
 
-For strings, `+` concatenates; for integers, `+` adds.
+Para cordas, `+` concatena; para inteiros, `+` soma.
 
-You need to convert the numbers to strings before you can concatenate them
+Você precisa converter os números para cordas antes de poder concatená-las
 
 ```python
 >>> str(4) + str(3)
 '43'
 ```
 
-#### Determine the length of a string
+#### Determinar a extensão de uma corda
 
-Use the `len()` function to calculate the length of a string. This function takes a sequence as an argument and returns an int
+Use a função `len()` para calcular a extensão de uma corda. Essa função assume a sequência como um argumento e retorna uma int
 
 
 ```python
@@ -1176,15 +1176,15 @@ TAGCTATATAAAATCATAAT
 >>> len(dna)
 20
 ```
-> The length of the string, including spaces, is calculated and returned.
+> A extensão de uma corda, incluindo espaços, é calculada e apresentada. 
 
-The value that `len()` returns can be stored in a variable.  
+O valor que `len()` retorna pode ser armazenado em uma variável.  
 ```python
 >>> dna_length = len(dna)
 >>> print(dna_length)
 20
 ```
-You can mix strings and ints in `print()`, but not in concatenation.
+Você pode misturar cordas e ints em `print()`, mas não em concatenação.
 
 ```python
 >>> print("The lenth of the DNA sequence:" , dna , "is" , dna_length)
@@ -1194,25 +1194,25 @@ The lenth of the DNA sequence: TAGCTATATAAAATCATAAT is 20
 
 
 
-#### Changing String Case
+#### Alterando o caso da corda
 
-Changing the case of a string is a bit different than you might first expect. For example, to lowercase a string we need to use a method. A method is a function that is specific to an object. When we assign a string to a variable we are creating an instance of a string object. This object has a series of methods that will work on the data that is stored in the object. Recall that `dir()` will tell you all the methods that are available for an object. The `lower()` function is a string method. 
+Alterando o caso da corda é um pouco distinto do que você pode esperar inicialmente. Por exemplo, para diminuir uma corda precisamos utilizar um método. Um método é uma função específica para um objeto. Quando nós assumimos uma corda a uma variável estamos criando uma instância de um objeto de corda. Esse objeto tem uma série de métodos que funcionarão nos dados que estão armazenados no objeto. Lembre-se que `dir()` irá te dizer todos os métodos que estão disponíveis para um objeto. A função `lower()` é um método de corda. 
 
-Let's create a new string object.    
+Vamos criar um novo objeto de corda.    
 ```python
 dna = "ATGCTTG"
 ```
-> Look familiar?
+> Parece familiar?
 
-Now that we have a string object we can use string methods. The way you use a method is to put a '.' between the object and the method name.
+Agora que nós temos um objeto de corda nós podemos usar os métodos de corda. A forma que você utiliza um método consiste em inserir um '.' entre o objeto e o nome do método.
 ```python
 >>> dna = "ATGCTTG"
 >>> dna.lower()
 'atgcttg'
 ```
-> the lower() method returns the contents stored in the 'dna' variable in lowercase.
+> o método lower() retorna os conteúdos armazenados na variável 'dna' em letra minúscula. 
 
-The contents of the 'dna' variable have not been changed. Strings are immutable. If you want to keep the lowercased version of the string, store it in a new variable.
+Os conteúdos da variável 'dna' não se alteraram. Cordas são imutáveis. Se você quiser manter a versão minúscula de uma corda, armazene ela em uma nova variável.
 ```python
 >>> print(dna)
 ATGCTTG
@@ -1222,15 +1222,15 @@ ATGCTTG
 >>> print(dna_lowercase)
 atgcttg
 ```
-The string method can be nested inside of other functions.
+O método de corda pode ser guardado dentro de outras funções.
 ```python
 >>> dna = "ATGCTTG"
 >>> print(dna.lower())
 atgcttg
 ```
-> The contents of 'dna' are lowercased and passed to the `print()` function.
+> Os conteúdos de 'dna' são transformados em minúsculos e trasnportados para a função `print()`.
 
-If you try to use a string method on a object that is not a string you will get an error.
+Se você tentar usar um método de corda em um objeto que não é uma corda você receberá um erro. 
 
 ```python
 >>> nt_count = 6
@@ -1239,9 +1239,9 @@ Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
 AttributeError: 'int' object has no attribute 'lower'
 ```
-> You get an AttributeError when you use a method on the an incorrect object type. We are told that the int object (an int is returned by `len()`) does not have a function called lower.
+> Você obtém um AttributeError quando você usa um método em um tipo de objeto incorreto. Nós recebemos que o objeto int (um int é retornado por `len()`) não tem uma função chamada inferior.
 
-Now let's uppercase a string.
+Vamos tornar uma corda maiúscula agora.
 
 ```python
 >>> dna = 'attgct'
@@ -1250,12 +1250,12 @@ Now let's uppercase a string.
 >>> print(dna)
 attgct
 ```
-> The contents of the variable 'dna' were returned in upper case. The contents of 'dna' were not altered.
+> Os conteúdos de uma variável 'dna' são retornados em maiúsculo. Os conteúdos de 'dna' não foram alterados.
 
-#### Find and Count
+#### Encontrar e contar
 
-The positional index of an exact string in a larger string can be found and returned with the string method 
-`find()`. An exact string is given as an argument and the index of its first occurrence is returned. -1 is returned if it is not found.
+O índice posicional de uma corda exata em uma corda maior pode ser encontrado e retornado com o método de corda 
+`find()`. Uma corda exata é dada como um argumento e o índice de sua primeira ocorrência é retornado. -1 é retornado se nada for encontrado.
 
 ```python
 >>> dna = 'ATTAAAGGGCCC'
@@ -1265,19 +1265,19 @@ The positional index of an exact string in a larger string can be found and retu
 -1
 ```
 
-> The substring 'T' is found for the first time at index 1 in the string 'dna' so 1 is returned. The substring 'N' is not found, so -1 is returned.`count(str)` returns the number (as an int) of exact matches of str it found
+> O subtermo 'T' é encontrado pela primeira vez no índice 1 na corda 'dna' então 1 é retornado. O subtermo 'N' não foi encontrado, então -1 é retornado. `count(str)` retorna o número (como um int) que se encaixa exatamente com a corda que encontrou
 
 ```python
 >>> dna = 'ATGCTGCATT'
 >>> dna.count('T')
 4
 ```
-> The number of times 'T' is found is returned. The string stored in 'dna' is not altered.
+> O número de vezes que 'T' for encontrado é retornado. A corda armazenada em 'dna' não é alterada.
 
 
-#### Replace one string with another
+#### Substituir uma corda com outra
 
-`replace(str1,str2)` returns a new string with all matches of `str1` in a string replaced with `str2`. 
+`replace(str1,str2)` retorna uma nova corda com todas as combinações de `str1` em uma corda substituída com `str2`. 
 
 
 ```python
@@ -1290,21 +1290,21 @@ ATGCTGCATT
 >>> print(rna)
 AUGCUGCAUU
 ```
-> All occurrences of T are replaced by U. The new string is returned. The original string has not actually been altered. If you want to reuse the new string, store it in a variable.
+> Todos as ocorrências de T são substitupidas por U. A nova corda é retornada. A corda original não foi de fato alterada. Se você quiser reutilizar a nova corda, armazene ela em uma variável.
 
 
 
-#### Extracting a Substring, or Slicing
+#### Extraindo um subtermo, ou separando
 
-Parts of a string can be located based on position and returned. This is because a string is a sequence. Coordinates start at 0. You add the coordinate in square brackets after the string's name. 
+Partes de uma corda podem ser localizadas baseadas na posição e retornadas. Isso é porque uma corda é uma sequência. Coordenadas começam em 0. Você adiciona a coordenada em colchetes depois do nome da corda. 
 
-You can get to any part of a string with the following syntax [start : end : step].  
+Você pode chegar a qualquer parte da corda com a seguinte sentença [start : end : step].  
 
-This string 'ATTAAAGGGCCC' is made up of the following sequence of characters, and positions (starting at zero).
+Essa corda 'ATTAAAGGGCCC' é feita da seguinte sequência de caracteres, e posições (começando em zero).
 
 
 
-| Position/Index | Character |
+| Posição/Índice | Caractere |
 | -------------- | --------- |
 | 0              | A         |
 | 1              | T         |
@@ -1319,7 +1319,7 @@ This string 'ATTAAAGGGCCC' is made up of the following sequence of characters, a
 | 10             | C         |
 | 11             | C         |
 
-Let's return the 4th, 5th, and 6th nucleotides. To do this, we need to start counting at 0 and remember that python counts the gaps between each character, starting with zero. 
+Vamos retornar os 4°, 5° e 6° nucleotídeos. Para isso, nós precisamos começar contando em 0 e lembrando que o python conta os vãos entre cada caractere, começando com zero. 
 
 ```
 index      0   1   2   3   4   5   6   7   8 ...
@@ -1334,39 +1334,39 @@ string       A   T   T   A   A   A   G   G  ...
 >>> print(sub_dna)
 AAA
 ```
-> The characters with indices 3, 4, 5 are returned. Or in other words, every character starting at index 3 and up to but not including, the index of 6 are returned. 
+> Os caracteres com índices 3, 4, 5 são retornados. Em outras palavras, todo caractere começando com o índice 3 e acima mas não incluindo, o índice de 6 que retornado. 
 
-Let's return the first 6 characters.
+Vamos retornar os primeiros 6 caracteres.
 ```python
 >>> dna = 'ATTAAAGGGCCC'
 >>> sub_dna = dna[0:6]
 >>> print(sub_dna)
 ATTAAA
 ```
-> Every character starting at index 0 and up to but not including index 6 are returned. This is the same as dna[:6]
+> Todo caractere começando no índice 0 e acima mas não incluindo o de índice 6 são retornados. Esse é o mesmo que dna[:6]
 
-Let's return every character from index 6 to the end of the string.
+Vamos retornar todos os caracteres do índice 6 até o fim da corda.
 ```python
 >>> dna = 'ATTAAAGGGCCC'
 >>> sub_dna = dna[6:]
 >>> print(sub_dna)
 GGGCCC
 ```
-> When the second argument is left blank, every character from index 6 and greater is returned.
+> Quando o segundo argumento é deixado em branco, todos caracteres do índice 6 e acima são retornados.
 
-Let's return the last 3 characters.
+Vamos retornar os últimos 3 caracteres.
 ```python
 >>> sub_dna = dna[-3:]
 >>> print(sub_dna)
 CCC
 ```
-> When the second argument is left blank and the first argument is negative (-X), X characters from the end of the string are returned.
+> Quando o segundo argumento é deixado em branco e o primeiro argumento é negativo (-X), X caracteres do final da corda são retornados.
 
-#### Reverse a string or a list
+#### Reverter uma corda ou uma lista
 
- There is no reverse function, you need to use a slice with step -1 and empty start and end.
+ Não existe função de reverso, você precisa usar uma fatia com patamar -1 e início e fim vazios.
 
-For a string, it looks like this
+Para uma corda, se parece com isso
 
 ```python
 >>> dna='GATGAA'
@@ -1375,35 +1375,35 @@ For a string, it looks like this
 ```
 
 
-#### Other String Methods
+#### Outros métodos de corda
 
-Since these are methods, be sure to use in this syntax `string.method()`.
+Desde que estes são métodos, se certifique de utilizar na sentença `string.method()`.
 
-| function                       | Description                              |
+| função                         | Descrição                                |
 | ------------------------------ | ---------------------------------------- |
-| `s.strip()`                    | returns a string with the whitespace removed from the start and end |
-| `s.isalpha()`                  | tests if all the characters of the string are alphabetic characters. Returns True or False. |
-| `s.isdigit()`                  | tests if all the characters of the string are numeric characters. Returns True or False. |
-| `s.startswith('other_string')` | tests if the string starts with the string provided as an argument. Returns True or False. |
-| `s.endswith('other_string')`   | tests if the string ends with the string provided as an argument. Returns True or False. |
-| `s.split('delim')`             | splits the string on the given exact delimiter. Returns a list of substrings. If no argument is supplied, the string will be split on whitespace. |
-| `s.join(list)`                 | opposite of `split()`. The elements of a list will be concatenated together using the string stored in 's' as a delimiter. |
+| `s.strip()`                    | retorna uma corda com o espaço em branco removido do começo e fim |
+| `s.isalpha()`                  | testa se todos caracteres da corda são alfabéticos. Retorna verdadeiro ou falso. |
+| `s.isdigit()`                  | testa se todos caracteres da corda são nnuméricos. Retorna verdadeiro ou falso. |
+| `s.startswith('other_string')` | testa se a corda começa com a corda fornecida como argumento. Retorna verdadeiro ou falso. |
+| `s.endswith('other_string')`   | testa se a corda termina com a corda fornecida como argumento. Retorna verdadeiro ou falso. |
+| `s.split('delim')`             | separa a corda no delimitador exato fornecido. Retorna a lista de subtermos. Se o argumento é fornecido, a corda será separada no espaço em branco. |
+| `s.join(list)`                 | O oposto de `split()`. Os elementos de uma lista serão concatenados juntos usando a corda armazenada em 's' como um delimitadoras. |
 
 
 __split__
-`split` is a method or a way to break up a string on a set of characters. What is returned is a list of elements with the characters that were used for breaking are removed. We will be going over lists in more detail in the next session. Don't get too worried about this.
+`split` é um método ou forma de partir uma corda em um grupo de caracteres. O que é retornado é uma lista de elementos com caracteres que são usados para partir removidos. Iremos através das listas em mais detalhes na próxima sessão. Não se preocupe com isso.
 
-Lets look at this string:
+Vamos olhar para essa corda:
 ```
 00000xx000xx000000000000xx0xx00
 ```
-Let's split on 'xx' and get a list of the 0's  
+Vamos separar em 'xx' e obter uma lista dos 0's  
 
-What is the 's' in `s.split(delim)` ?
+O que é o What 's' em `s.split(delim)` ?
 
-What is the 'delim' in `s.split(delim)` ?
+O que é 'delim' em `s.split(delim)` ?
 
-Let's try it:
+Vamos tentar isso:
 ```python
 >>> string_to_split='00000xx000xx000000000000xx0xx00'
 >>> string_to_split.split('xx')
@@ -1412,9 +1412,9 @@ Let's try it:
 >>> print(zero_parts)
 ['00000', '000', '000000000000', '0', '00']
 ```
-> We started with a string and now have a list with all the delimeters removed
+> Nós começamos com uma corda e agora temos uma lista com todos os delimitadores removidos
 
-Here is another example. Let's split on tabs to get a list of numbers in tab separated columns.   
+Aqui está outro exemplo. Vamos dividir em tabs para obter uma lista dos números em colunas separadas tab.   
 ```python
 >>> input_expr = '4.73\t7.91\t3.65'
 >>> expression_values = input_expr.split('\t')
@@ -1425,18 +1425,18 @@ Here is another example. Let's split on tabs to get a list of numbers in tab sep
 
 
 __join__
-`join` is a method or a way to take a list of elements, of things, and turn them into a string with something put in between each element. List will be covered in the next session in more detail.
+`join` é um método ou uma forma de pegar uma lista de elementos, de coisas, e transformar em uma corda com algo posto entre cada elemento. A lista será coberta na próxima seção com mais detalhes.
 
 
-Let's join a list of Ns  `list_of_Ns = ['NNNNN', 'NNN', 'N', 'NNNNNNNNNNNNNNN', 'NN']` on 'xx' to get this string:
+Vamos aplicar em uma lista de Ns `list_of_Ns = ['NNNNN', 'NNN', 'N', 'NNNNNNNNNNNNNNN', 'NN']` em 'xx' para obter essa corda:
 ```
 NNNNNxxNNNxxNxxNNNNNNNNNNNNNNNxxNN
 ```
 
 
-What is the 's' in `s.join(list)` ?
+O que é o 's' em `s.join(list)` ?
 
-What is the 'list' in `s.join(list)` ?
+O que é a 'list' em `s.join(list)` ?
 
 ```python
 >>> list_of_Ns = ['NNNNN', 'NNN', 'N', 'NNNNNNNNNNNNNNN', 'NN']
@@ -1447,10 +1447,10 @@ What is the 'list' in `s.join(list)` ?
 >>> string_of_elements_with_xx
 'NNNNNxxNNNxxNxxNNNNNNNNNNNNNNNxxNN'
 ```
-> We started with a list now have all the elements now in one string with the delimiter added in between each element.
+> Nós começamos com uma lista e agora temos todos os elementos em uma corda com o delimitador adicionado entre cada elemento.
 
 
-Let's take a list of expression values and create a tab delimited string that will open nicely in a spreadsheet with each value in its own column:
+Vamos pegar uma lista de valores de expressão e criar uma corda delimitada tab que abrirá bem em uma planilha com cada valor em sua própria coluna:
 ```python
 >>> expression_values = ['4.73', '7.91', '3.65']
 >>>expression_values
@@ -1459,13 +1459,13 @@ Let's take a list of expression values and create a tab delimited string that wi
 >>> expression_value_string
 '4.73\t7.91\t3.65'
 ```
-> print this to a file and open it in Excel! It is beautiful!! 
+> imprima isso em um arquivo e abra ele em Excel, é lindo!!
 
 
 
-### String Formatting
+### Formatação de corda
 
-Strings can be formated using the  `format()` function. Pretty intuitive, but wait til you see the details! For example, if you want to include literal stings and variables in your print statement and do not want to concatenate or use multiple arguments in the `print()` function you can use string formatting.  
+Cordas podem ser formatadas usando a função `format()`. Bem intuitivo, mas espere até ver os detalhes! Por exemplo, se você quiser incluir cordas literais e variáveis em seu testamento de impressão e não quer concatenar ou usar múltiplos argumentos na função `print()` você pode usar formatação de corda.  
 
 ```python
 >>> string = "This sequence: {} is {} nucleotides long and is found in {}."
@@ -1477,27 +1477,27 @@ This sequence: {} is {} nucleotides long and is found in {}.
 >>> print(new_string)
 This sequence: TGAACATCTAAAAGATGAAGTTT is 23 nucleotides long and is found in Brca1.
 ```
-We put together the three variables and literal strings into a single string using the function `format()`. The original string is not altered, a new string is returned that incorporates the arguments. You can save the returned value in a new variable. Each `{}` is a placeholder for the string that needs to be inserted. 
+Nós colocamos juntamente três variáveis e cordas literais em uma corda única usando a função `format()`. A corda original não é alterada, uma nova corda é retornada e incorpora os argumentos. Você pode salvar o valor retornado em uma nova variável. Cada `{}` é um espaço reservado para a corda que precisa ser inserida.  
 
-Something nice about `format()` is that you can print int and string variable types without converting first.
+Algo legal sobre `format()` é que você pode imprimir int e tipos variáveis de corda sem converter primeiramente.
 
-You can also directly call `format()` inside a `print()` function. Here are two examples
+Você pode também chamar diretamente `format()` dentro de uma função `print()`. Aqui estão dois exemplos
 
 ```python
 >>> string = "This sequence: {} is {} nucleotides long and is found in {}."
 >>> print(string.format(dna,dna_len,gene_name))
 This sequence: TGAACATCTAAAAGATGAAGTTT is 23 nucleotides long and is found in Brca1.
 ```
-Or you use the `format()` function on a literal string:
+Ou use a função `format()` em uma corda literal:
 ```python
 >>> print( "This sequence: {} is {} nucleotides long and is found in {}.".format(dna,dna_len,gene_name))
 This sequence: TGAACATCTAAAAGATGAAGTTT is 23 nucleotides long and is found in Brca1.
 ```
-#### The `format()` mini-language
+#### A mini-linguagem `format()` 
 
-So far, we have just used `{}` to show where to insert the value of a variable in a string. You can add special characters inside the `{}` to change the way the variable is formatted when it's inserted into the string. 
+Até agora, nós usamos apenas `{}` para mostrar onde inserir o valor de uma variável em uma corda. Você pode adicionar caracteres especiais dentro de `{}` para mudar a forma que a variável é formatada quando é inserida dentro da corda. 
 
-> You can number these, not necessarily in order.
+> Você pode numerar estes, não necessariamente em ordem.
 
 ```python
 >>> '{0}, {1}, {2}'.format('a', 'b', 'c')
@@ -1506,9 +1506,9 @@ So far, we have just used `{}` to show where to insert the value of a variable i
 'c, b, a'
 ```
 
-To change the spacing of strings and the way numbers are formatted, you add `:` and other special characters like this `{:>5}` to right-justify a string in a five-character field.
+Para mudar o espaçamento das cordas e a forma que os números são formatados, você adiciona `:` e outros caracteres especiais como isso `{:>5}` para corrigir uma corda em um campo de cinco caracteres
 
-Lets right justify some numbers.  
+Vamos corrigir justificando alguns números.  
 
 ```python
 >>> print( "{:>5}".format(2) )
@@ -1519,7 +1519,7 @@ Lets right justify some numbers.
   200
 ```
 
-How about padding with zeroes? This means the five-character field will be filled as needed with zeroes to the left of any numbers you want to display
+E sobre preencher com zeros? Isso significa que o campo de cinco caracteres será preenchido conforme preciso com zeros a esquerda de quaisquer números que você quer apresentar
 ```python
 >>> print( "{:05}".format(2) )
 00002
@@ -1527,7 +1527,7 @@ How about padding with zeroes? This means the five-character field will be fille
 00020
 ```
 
-Use a `<` to indicate left-justification.
+Use um `<` para indicar justificação à esquerda.
 ```python
 >>> print( "{:<5} genes".format(2) )
 2     genes
@@ -1536,7 +1536,7 @@ Use a `<` to indicate left-justification.
 >>> print( "{:<5} genes".format(200) )
 200   genes
 ```
-Center aligning is done with `^` instead of `>` or `<`. You can also pad with characters other than 0. Here let's try `_` or underscore as in `:_^`. The fill symbol goes before the alignment symbol.
+Alinhamento ao centro é feito com `^` ao invés de `>` ou `<`. Você pode também preencher com caracteres sem ser 0. Aqui vamos tentar `_` ou sublinhar como em `:_^`. O símbolo de preencher vai antes do símbolo de alinhamento.
 ```python
 >>> print( "{:_^10}".format(2) )
 ____2_____
@@ -1547,46 +1547,46 @@ ___200____
 
 ```
 
-#### Summary of special formatting symbols so far
+#### Sumário de símbolos de formatação especiais até agora
 
-__Here are some of the ALIGNMENT options:__
+__Aqui estão algumas das opções de ALINHAMENTO:__
 
-| Option | Meaning                                  |      |
+| Opção  | Significado                              |      |
 | ------ | ---------------------------------------- | ---- |
-| `<`    | Forces the field to be left-aligned within the available space (this is the default for most objects). |      |
-| `>`    | Forces the field to be right-aligned within the available space (this is the default for numbers). |      |
-| `=`    | Forces the padding to be placed after the sign (if any) but before the digits. This is used for printing fields in the form ‘+000000120’. This alignment option is only valid for numeric types. |      |
-| `^`    | Forces the field to be centered within the available space. |      |
+| `<`    | Força o campo para estar alinhado a esquerda com o espaço disponível (Isso é o padrão para a maioria dos objetos). |      |
+| `>`    | Força o campo para estar alinhado a direita com o espaço disponível (Isso é o padrão para números). |      |
+| `=`    | Força o campo para o preenchimento ser posto de pois do sinal (se tiver) mas antes dos dígitos. Isso é usado para imprimir campos na forma ‘+000000120’. Essa opção de alinhamento é apenas válida para tipos numéricos. |      |
+| `^`    | Força o campo para ser centralizado com o espaço disponível. |      |
 
->Here's an example 
+>Aqui está um exemplo 
 >
 >`{  :    x  <  10   s}`
 >
-> fill with `x`   
-> left justify `<`  
-> `10` a field of ten characters 
-> `s` a string
+> preencher com `x`   
+> justificamento à esquerda `<`  
+> `10` um campo com dez caracteres 
+> `s` uma corda
 
 
-__Common Types__
+__Tipos comuns__
 
-| type | description                              |
+| tipo | descrição                                |
 | ---- | ---------------------------------------- |
-| b    | convert to binary                        |
-| d    | decimal integer                          |
-| e    | exponent, default precision is 6, uses `e` |
-| E    | exponent, uses `E`                       |
-| f    | floating point, default precision 6 (also F) |
-| g    | general number, float for values close to 0, exponent for others; also G |
-| s    | string, default type (see example above) |
-| x    | convert to hexadecimal, also X           |
-| %    | converts to % by multiplying by 100      |
+| b    | converte para binário                    |
+| d    | inteiro decimal                          |
+| e    | expoente, precisão padrão é 6, usa `e`   |
+| E    | expoente, usa `E`                        |
+| f    | ponto de flutuação, precisão padrão é 6 (também F) |
+| g    | número genérico, flutua para valores próximos de 0, expoente para outros; também G |
+| s    | corda, tipo padrão (conforme exemplo acima) |
+| x    | converte para hexadecimal, também X        |
+| %    | converte para % multiplicando por 100      |
 
 
-#### What's the point?
+#### Qual é o ponto?
 
 
-So much can be done with the `format()` function. Here is one last example, but not the last functionality of this function.  Let round a floating point number to fewer decimal places, starting with a lot.  (The default is 6.) Note that the function rounds to the nearest decimal place, but not always exactly the way you expect because of the way computers represent decimals with 1s and 0s.
+Muito pode ser feito com a função `format()`. Aqui está um último exemplo, mas não a última funcionalidade desta função. vamos circular um número de ponto de flutuação para algumas casas decimais, começando com muitos. (o padrão é 6). Note que a função circula para a casa decimal mais próxima, mas nem sempre exatamente da forma que você espera por conta da forma que os computadores representam decimais com 1s e 0s.
 
 ```python
 '{:f}'.format(3.141592653589793)
