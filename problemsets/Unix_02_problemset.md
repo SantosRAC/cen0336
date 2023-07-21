@@ -1,7 +1,7 @@
-# Unix 2 Problem Set
+# Conjunto de problemas Unix 2
 
 
-1. Se você ainda não o fezm siga [Steps 1-3 in Unix: GIT for Beginners](https://github.com/prog4biol/pfb2019#git-for-beginners). Aqui está um **sumário** destas etapas, **Por favor vá até a aula para ter o detalhamento**:
+1. Se você ainda não o fez, siga [Steps 1-3 in Unix: GIT for Beginners](https://github.com/prog4biol/pfb2019#git-for-beginners). Aqui está um **sumário** destas etapas, **Por favor vá até a aula para ter o detalhamento**:
    NOTA: Não crie um repositório dentro de outro repositório.
    - Crie uma conta GitHub e clique em "Novo" para criar um novo repositório.
    - Adicione informação sobre seu repositório.
