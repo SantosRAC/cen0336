@@ -1604,79 +1604,79 @@ Muito pode ser feito com a função `format()`. Aqui está um último exemplo, m
 ---
 ## Python 4
 
-### Lists and Tuples
+### Listas e Tuplas
 
 
 
 
-#### Lists
+#### Listas
 
-Lists are data types that store a collection of data.
+Listas são tipos de dados que armazenam uma coleção de dados. 
 
 
-- Lists are used to store an ordered, *indexed* collection of data.
-- Values are separated by commas
-- Values are enclosed in square brackets '[]'
-- Lists can grow and shrink
-- Values are mutable
+- Listas são usadas para armazenar uma coleção de dados ordenada e *indexada*.
+- Valores são separados por vírgulas
+- Valores são anexados entre colchetes '[]'
+- Listas podem crescer e encolher
+- Valores são mutáveis
 
 ```python
 [ 'atg' , 'aaa' , 'agg' ]
 ```
 
-#### Tuples
+#### Tuplas
 
-- Tuples are used to store an ordered, *indexed* collection of data.
-- Values are separated by commas
-- Values are enclosed in parentheses '()'
-- Tuples can **NOT** grow or shrink
-- Values are immutable
+- Tuplas são usadas para armazenar uma coleção de dados ordenada e indexada
+- Valores são separados por vírgulas
+- Valores são anexados entre parenteses '()'
+- Tuplas **NÃO** podem crescer ou encolher
+- Valores são imutáveis
 
 ```python
-( 'Jan' , 'Feb' , 'Mar' , 'Apr' , 'May' , 'Jun' , 'Jul' , 'Aug' , 'Sep' , 'Oct' , 'Nov' , 'Dec' )
+( 'Jan' , 'Fev' , 'Mar' , 'Abr' , 'Mai' , 'Jun' , 'Jul' , 'Ago' , 'Set' , 'Out' , 'Nov' , 'Dez' )
 ```
 
-Many functions and methods return tuples like `math.modf(x)`.	This function returns the fractional and integer parts of `x` in a two-item tuple. Here the is no reason to change this sequence.
+Muitas funções e métodos retornam tuplas como `math.modf(x)`. Essa função retorna as parter fracionais e inteiras de `x` em uma tupla de dois itens. Aqui não existe motivos para mudar a sequência.
 
 ```python
 >>> math.modf(2.6)
 (0.6000000000000001, 2.0)
 ```
 
-#### Back to Lists
+#### De volta às listas
 
-#### Accessing Values in Lists
+#### Acessando valores em listas
 
-To retrieve a single value in a list use the value's index in this format list[index]. This will return the value at the specified index, starting with 0. 
+Para recuperar um valor em uma lista utilize o índice do valor nesse formato list[index]. Isso retornará o valor do índice especificado, começando com 0. 
 
-Here is a list:  
+Aqui está uma lista:  
 ```python
 >>> codons = [ 'atg' , 'aaa' , 'agg' ]
 ```
-> There are 3 values with the indices of 0, 1, 2
+> Existem 3 valores com os índices 0, 1, 2
 
-| Index | Value |
+| Índice | Valor |
 | ----- | ----- |
 | 0     | atg   |
 | 1     | aaa   |
 | 2     | agg   |
 
-Let's access the 0th value, this is the element in the list with index 0. You'll need an index number (`0`) inside square brackets like this `[0]` . This goes after the name of the list (`codons`)
+Vamos acessar o valor de índice 0. Você vai precisar de um número de índice (`0`) dentro de colchetes desta forma `[0]` . Isso vai após o nome da lista (`codons`)
 ```python
 >>> codons = [ 'atg' , 'aaa' , 'agg' ]
 >>> codons[0]
 'atg'
 ```
-The value can be saved for later use by storing in a variable.
+O valor pode ser salvo para depois através do armazenamento em ua variável.
 ```python
 >>> codons = [ 'atg' , 'aaa' , 'agg' ]
 >>> first_codon = codons[0]
 >>> print(first_codon)
 atg
 ```
-> Each value can be saved in a new variable to use later.
+> Cada valor pode ser salvo em uma nova variável para usar posteriormente.
 
-The values can be retrieved and used directly.
+Os valores podem ser recuperados e usados diretamente.
 ```python
 >>> codons = [ 'atg' , 'aaa' , 'agg' ]
 >>> print(codons[0])
@@ -1686,10 +1686,10 @@ aaa
 >>> print(codons[2])
 agg
 ```
-> The 3 values are independently accessed and immediately printed. They are not stored in a variable.
+> Os 3 valores são acessados independentemente e impressos imediatamente. Eles não são armazenados em uma variável.
 
 
-If you want to access the values starting at the end of the list, use negative indices.
+Se você deseja acessar os valores começando pelo fim da lista, use índices negativos.
 ```python
 >>> codons = [ 'atg' , 'aaa' , 'agg' ]
 >>> print(codons[-1])
@@ -1697,11 +1697,11 @@ agg
 >>> print(codons[-2])
 aaa
 ```
-> Using a negative index will return the values from the end of the list. For example, -1 is the index of the last value 'agg'. This value also has an index of 2.
+> Usar um índice negativo retornará os valores do final da lista. Por exemplo, -1 é o índice do último valor 'agg'. Esse valor também possui um índice de 2.
 
-#### Changing Values in a List
+#### Alterando valores em uma lista
 
-Individual values can be changed using the value's index and the assignment operator.
+Valores individuais podem ser alterados usando o valor de índice e o operador de atribuição.
 
 ```python
 >>> print(codons)
@@ -1710,20 +1710,20 @@ Individual values can be changed using the value's index and the assignment oper
 >>> print(codons)
 ['atg', 'aaa', 'cgc']
 ```
-What about trying to assign a value to an index that does not exist?
+E sobre atribuir um valor para um índice que não existe?
 ```python
 >>> codons[5] = 'aac'
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
 IndexError: list assignment index out of range
 ```
-> codon[5] does not exist, and when we try to assign a value to this index we get an IndexError. If you want to add new elements to the end of a list use  `codons.append('taa')` or `codons.extend(list)`. See below for more details.
+> codon[5] não existe, e quando tentamos atribuir valor para esse índice ocorre um IndexError. Se você deseja adicionar novos elementos no final da lista use `codons.append('taa')` ou `codons.extend(list)`. Veja abaixo mais detalhes.
 
-#### Extracting a Subset of a List, or Slicing
+#### Extraindo um subconjunto de uma lista, ou Recortando
 
-This works in exactly the same way with lists as it does with strings. This is because both are sequences, or ordered collections of data with positional information. Remember Python counts the divisions between the elements, starting with 0.
+Isso funciona da mesma forma com as listas como com as cordas. Isso é porque ambos são sequências, ou cooleções ordenadas de dados com informação posicional. Lembre-se que Python conta as divisões entre os elementos, começando com 0.
 
-| Index | Value |
+| Índice | Valor |
 | ----- | ----- |
 | 0     | atg   |
 | 1     | aaa   |
@@ -1732,7 +1732,7 @@ This works in exactly the same way with lists as it does with strings. This is b
 | 4     | cgc   |
 | 5     | acg   |
 
-use the syntax [start : end : step] to slice and dice your python seqeunce 
+use a syntaxe [start : end : step] para dividir sua sequência python 
 
 ```python
 >>> codons = [ 'atg' , 'aaa' , 'agg' , 'aac' , 'cgc' , 'acg']
@@ -1745,54 +1745,54 @@ use the syntax [start : end : step] to slice and dice your python seqeunce
 >>> print (codons[0:3])
 ['atg', 'aaa', 'agg']
 ```
-> `codons[1:3]` returns every value starting with the value of codons[1] up to but not including codons[3]  
-> `codons[3:]` returns every value starting with the value of codons[3] and every value after.  
-> `codons[:3]` returns every value up to but not including codons[3]  
-> `codons[0:3]` is the same as `codons[:3]`   
+> `codons[1:3]` retorna todo valor começando com o valor de códons[1] até mas não incluindo os códons[3]  
+> `codons[3:]` retorna todo valor começando com o valor de códons[3] e todos os valores posteriores.  
+> `codons[:3]` retorna todo valor até mas não incluindo códons[3]  
+> `codons[0:3]` é o mesmo que `codons[:3]`   
 
 
-#### List Operators
+#### Lista de operadores
 
-| Operator | Description   | Example                                  |
+| Operador | Descrição     | Exemplo                                  |
 | -------- | ------------- | ---------------------------------------- |
-| `+`      | Concatenation | `[10, 20, 30] + [40, 50, 60]` returns `[10, 20, 30, 40, 50, 60]` |
-| `*`      | Repetition    | `['atg'] * 4` returns `['atg','atg','atg','atg']` |
-| `in`     | Membership    | `20 in [10, 20, 30]`  returns `True`     |
+| `+`      | Concatenação | `[10, 20, 30] + [40, 50, 60]` retorna `[10, 20, 30, 40, 50, 60]` |
+| `*`      | Repetição    | `['atg'] * 4` retorna `['atg','atg','atg','atg']` |
+| `in`     | Filiação     | `20 in [10, 20, 30]`  retorna `True`     |
 
-#### List Functions
+#### Lista de funções
 
-| Functions                               | Description                              | Example                                  |
+| Funções                                 | Descrição                                | Exemplo                                  |
 | --------------------------------------- | ---------------------------------------- | ---------------------------------------- |
-| `len(list)`                             | returns the length or the number of values in list | `len([1,2,3])` returns `3`               |
-| `max(list)`                             | returns the value with the highest ASCII value (=latest in ASCII alphabet) | `max(['a','A','z'])` returns `'z'`       |
-| `min(list)`                             | returns the value with the lowest ASCII value (=earliest in ASCII alphabet) | `min(['a','A','z'])` returns `'A'`       |
-| `list(seq)`                             | converts a tuple into a list             | `list(('a','A','z'))` returns `['a', 'A', 'z']` |
-| `sorted(list, key=None, reverse=False)` | returns a sorted list based on the key provided | `sorted(['a','A','z'])` returns `['A', 'a', 'z']` |
-| `sorted(list, key=str.lower, reverse=False)`  | `str.lower()` makes all the elements lowercase before sorting | `sorted(['a','A','z'],key=str.lower)` returns `['a', 'A', 'z']` |
+| `len(list)`                             | retorna o comprimento ou o número de valores em uma lista | `len([1,2,3])` retorna `3`               |
+| `max(list)`                             | retorna o valor com o maior ASCII (=último no alfabeto ASCII) | `max(['a','A','z'])` retorna `'z'`       |
+| `min(list)`                             | retorna o valor com o menor ASCII (=primeiro no alfabeto ASCII) | `min(['a','A','z'])` retorna `'A'`       |
+| `list(seq)`                             | converte uma tupla em uma lista          | `list(('a','A','z'))` retorna `['a', 'A', 'z']` |
+| `sorted(list, key=None, reverse=False)` | retorna uma lista organizada baseada na chave fornecida | `sorted(['a','A','z'])` retorna `['A', 'a', 'z']` |
+| `sorted(list, key=str.lower, reverse=False)`  | `str.lower()` faz com que todos os elementos fiquem minúsculos antes de organizar | `sorted(['a','A','z'],key=str.lower)` retorna `['a', 'A', 'z']` |
 
 
-#### List Methods
+#### Lista de métodos
 
-Remember methods are used in the following format list.method().   
+Lembre-se que métodos são utilizados no seguinte formato list.method().   
 
-For these examples use: `nums = [1,2,3]` and `codons = [ 'atg' , 'aaa' , 'agg' ]`
+Para esses exemplos utilize: `nums = [1,2,3]` e `codons = [ 'atg' , 'aaa' , 'agg' ]`
 
-| Method                    | Description                              | Example                                  |
+| Métodos                   | Descrição                                | Exemplo                                  |
 | ------------------------- | ---------------------------------------- | ---------------------------------------- |
-| `list.append(obj)`        | appends an object to the end of a list   | nums.append(9) ; print(nums) ; returns [1,2,3,9] |
-| `list.count(obj)`         | counts the occurrences of an object in a list | nums.count(2) returns 1                  |
-| `list.index(obj)`         | returns the lowest index where the given object is found | nums.index(2) returns 1                  |
-| `list.pop()`              | removes and returns the last value in the list. The list is now one element shorter | nums.pop() returns 3                     |
-| `list.insert(index, obj)` | inserts a value at the given index. Remember to think about the divisions between the elements | nums.insert(0,100) ; print(nums) returns [100, 1, 2, 3] |
-| `list.extend(new_list)`   | appends `new_list` to the end of `list`  | nums.extend([7, 8]) ; print(nums) returns [1, 2, 3, 7,8] |
-| `list.pop(index)`         | removes and returns the value of the index argument. The list is now 1 value shorter | nums.pop(0) returns 1                    |
-| `list.remove(obj)`        | finds the lowest index of the given object and removes it from the list. The list is now one element shorter | codons.remove('aaa') ; print(codons) returns  [ 'atg' , 'agg' ] |
-| `list.reverse()`          | reverses the order of the list           | nums.reverse() ; print(nums) returns [3,2,1] |
-| `list.copy()`             | Returns a shallow copy of list. Shallow vs [Deep](https://www.geeksforgeeks.org/copy-python-deep-copy-shallow-copy/) only matters in multidimensional data structures. |                                          |
-| `list.sort([func])`       | sorts a list using the provided function. Does not return a list. The list has been changed. Advanced list sort will be covered once writing your own functions has been discussed. | codons.sort() ; print(codons) returns ['aaa', 'agg', 'atg'] |
+| `list.append(obj)`        | anexa um objeto no final de uma lista  | nums.append(9) ; print(nums) ; retorna [1,2,3,9] |
+| `list.count(obj)`         | conta as ocorrências de um objeto em uma lista | nums.count(2) retorna 1                  |
+| `list.index(obj)`         | retorna o menor índice em que o objeto fornecido é encontrado | nums.index(2) retorna 1                  |
+| `list.pop()`              | remove e retorna o últio valor de uma lista. A lista é agora um elemento mais curta | nums.pop() retorna 3                     |
+| `list.insert(index, obj)` | insere um valor ao índice fornecido. Lembre-se de pensar sobre as divisões entre os elementos | nums.insert(0,100) ; print(nums) retorna [100, 1, 2, 3] |
+| `list.extend(new_list)`   | anexa `new_list` ao final de `list`  | nums.extend([7, 8]) ; print(nums) retorna [1, 2, 3, 7,8] |
+| `list.pop(index)`         | remove e retorna o valor do argumento indexado. A lista é agora um valor mais curta | nums.pop(0) retorna 1                    |
+| `list.remove(obj)`        | encontra o menor índice do objeto fornecido e remove ele da lista. A lista é agora um elemento mais curta | codons.remove('aaa') ; print(codons) retorna  [ 'atg' , 'agg' ] |
+| `list.reverse()`          | inverte a ordem da lista          | nums.reverse() ; print(nums) retorna [3,2,1] |
+| `list.copy()`             | Retorna uma cópia rasa da lista. Rasa vs [Deep](https://www.geeksforgeeks.org/copy-python-deep-copy-shallow-copy/) apenas importa em estruturas de data multidimensionais. |                                          |
+| `list.sort([func])`       | organiza uma lista utilizando a função fornecida. Não retorna uma lista. A lista foi alterada. Uma organização de lista avançada será coberta assim que escrever suas próprias funções for discutido. | codons.sort() ; print(codons) retorna ['aaa', 'agg', 'atg'] |
 
 
-Be careful how you make a copy of your list
+Tome cuidado em como você faz uma cópia de sua lista
 ```python
 >>> my_list=['a', 'one', 'two']
 >>> copy_list=my_list
@@ -1802,9 +1802,9 @@ Be careful how you make a copy of your list
 >>> print(copy_list)
 ['a', 'one', 'two', '1']
 ```
-> Not what you expected?! Both lists have changed because we only copied a pointer to the original list when we wrote `copy_list=my_list`. 
+> Não foi o que esperava?! Ambas listas foram alteradas porque nós apenas copiamos um ponteiro para a lista original quando escrevemos `copy_list=my_list`. 
 
-Let's copy the list using the `copy()` method.
+Vamos copiar a lista utilizando o método `copy()`.
 ```python
 >>> my_list=['a', 'one', 'two']
 >>> copy_list=my_list.copy()
@@ -1812,13 +1812,13 @@ Let's copy the list using the `copy()` method.
 >>> print(my_list)
 ['a', 'one', 'two']
 ```
-> There we go, we get what we expect this time!
+> Agora sim, nós obtivemos o esperado desta vez!
 
 
 
-#### Building a List one Value at a Time
+#### Construindo uma lista um valor por vez
 
-Now that you have seen the `append()` function we can go over how to build a list one value at a time.
+Agora que você já viu a função `append()` nós podemos ir em como construir uma lista valor por vez.
 
 ```python
 >>> words = []
@@ -1829,41 +1829,41 @@ Now that you have seen the `append()` function we can go over how to build a lis
 >>> print(words)
 ['one', 'two']
 ```
-> We start with a an empty list called 'words'. We use `append()` to add the value 'one' then to add the value 'two'. We end up with a list with two values. You can add a whole list to another list with `words.extend(['three','four','five'])`
+> Nós começamos com uma lista vazia chamada 'words'. Nós usamos `append()` para adicionar o valor 'one' depois o valor 'two'. Finalizamos a lista com dois valores. Você pode adicionar uma lista inteira em outra lista com `words.extend(['three','four','five'])`
 
 
 
-### Loops
+### Rotações
 
-All of the coding that we have gone over so far has been executed line by line. Sometimes there are blocks of code that we want to execute more than once. Loops let us do this.  
+Todas as codificações pelas quais percorremos até então foram executadas linha por linha. Algumas vezes existem blocos de códigos que queremos executar mais do que uma vez. Rotações permitem que façamos isso.  
 
 
 
-There are two loop types:
+Existem dois tipos de rotações:
 1. while loop
 2. for loop
 
 
 #### While loop 
 
-The while loop will continue to execute a block of code as long as the test expression evaluates to `True`. 
+O while loop vai continuar a executar um bloco de código enquanto a expressão de teste apresentar `Verdadeiro`. 
 
-#### While Loop Syntax
+#### While Loop Syntaxe
 
 ```python
 while expression:
-  # these statements get executed every time the code enters the loop 
+  # estas declarações são executadas sempre que o código entrar em loop 
   statement1
   statement2
   more_statements
-# code below here gets executed after the while loop exits
+# código logo abaixo é executado depois que o while loop existir
 rest_of_code_goes_here
 more_code
 ```
-> The condition is the expression. The while loop block of code is the collection of indented statements following the expression.
+> A condição é a expressão. O bloco de código while loop é uma coleção de declarações recuadas seguindo a expressão.
 
 
-Code: 
+Código: 
 ```python
 #!/usr/bin/env python3
 
@@ -1875,7 +1875,7 @@ print("Done")
 ```
 
 
-Output:
+Saída:
 ```
 $ python while.py
 count: 0
@@ -1885,17 +1885,17 @@ count: 3
 count: 4
 Done
 ```
-> The while condition was true 5 times and the while block of code was executed 5 times.
+> A condição while foi verdadeira 5 vezes e o bloco de código while foi executado 5 vezes.
 >
-> - count is equal to 0 when we begin
-> - 0 is less than 5 so we execute the while block
-> - count is printed
-> - count is incremented (count = count + 1)
-> - count is now equal to 1.
-> - 1 is less than 5 so we execute the while block for the 2nd time.
-> - this continues until count is 5. 
-> - 5 is not less than 5 so we exit the while block
-> - The first line following the while statement is executed, "Done" is printed
+> - contagem é igual a 0 quando começamos
+> - 0 é menos que 5 então executamos o bloco while
+> - contagem é impressa 
+> - contagem é incrementada (contagem = count + 1)
+> - contagem é agora igual a 1.
+> - 1 é menor que 5 então executamos o bloco while pela segunda vez.
+> - isso permanece até que a contagem seja 5. 
+> - 5 não é menor que 5 então nós saímos do bloco while
+> - A primeira linha seguindo a declaração while é executada, "Done" é impresso 
 
 #### Infinite Loops
 
