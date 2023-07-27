@@ -1833,13 +1833,13 @@ Agora que você já viu a função `append()` nós podemos ir em como construir 
 
 
 
-### Rotações
+### Loops
 
-Todas as codificações pelas quais percorremos até então foram executadas linha por linha. Algumas vezes existem blocos de códigos que queremos executar mais do que uma vez. Rotações permitem que façamos isso.  
+Todas as codificações pelas quais percorremos até então foram executadas linha por linha. Algumas vezes existem blocos de códigos que queremos executar mais do que uma vez. Loops permitem que façamos isso.  
 
 
 
-Existem dois tipos de rotações:
+Existem dois tipos de loops:
 1. while loop
 2. for loop
 
@@ -1897,20 +1897,20 @@ Done
 > - 5 não é menor que 5 então nós saímos do bloco while
 > - A primeira linha seguindo a declaração while é executada, "Done" é impresso 
 
-#### Infinite Loops
+#### Loops infinitos
 
-An infinite loop occurs when a while condition is always true. Here is an example of an infinite loop.
+Um loop infinito ocorre quando um condição while é sempre verdadeira. Aqui está um exemplo de um loop infinito.
 
 ```python
 #!/usr/bin/env python3
 
 count = 0
-while count < 5:            # this is normally a bug!!
-  print("count:" , count)   # forgot to increment count in the loop!!
+while count < 5:            # isso é normalmente um bug!!
+  print("count:" , count)   # esqueça de incrementar contagem no loop!!
 print("Done") 
 ```
 
-Output:
+Saída:
 ```
 $ python infinite.py
 count: 0
@@ -1924,10 +1924,10 @@ count: 0
 ...
 ...
 ```
-> What caused the expression to always be `True`? 
-> The statement that increments the count is missing, so it will always be smaller than 5. To stop the code from  printing forever use ctrl+c. Behavior like this is almost always due to a bug in the code.
+> O que fez com que a condição seja sempre `Verdadeira`? 
+> A condição que incrementa a contagem está faltando, então sempre será inferior a 5. Para impedir o código de imprimir para sempre utilize ctrl+c. Um comportamento como esse é quase sempre devido a um bug no código.
 
-A better way to write an infinite loop is with `True`. You'll need to include something like `if ...: break` 
+Uma forma melhro de escrever um loop infinito é com `True`. Você precisará incluir algo como `if ...: break` 
 
 ```python
 #!/usr/bin/env python3
@@ -1944,40 +1944,40 @@ print('Finished the loop')
 
 #### For Loops
 
-A for loop is a loop that executes the for block of code for every member of a sequence, for example the elements of a list or the letters in a string.
+Um for loop é um loop que executa o bloco de códigos for para qualquer membro de uma sequência, por exemplo os elementos de uma lista ou as letras de uma corda.
 
-#### For Loop Syntax
+#### For Loop Syntaxe
 
 ```python
 for iterating_variable in sequence:
   statement(s)
 ```
 
-An example of a sequence is a list. Let's use a for loop with a list of words. 
+Um exemplo de sequência é uma lista. Vamos usar um for loop com uma lista de palavras. 
 
-Code:
+Código:
 ```python
 #!/usr/bin/env python3
 
-words = ['zero','one','two','three','four']
+words = ['zero','um','dois','três','quatro']
 for word in words:
   print(word)
 ```
-> Notice how I have named my variables, the list is plural and the iterating variable is singular
+> Perceba como eu nomeei minhas variáveis, a lista é plural e a variável interativa é singular
 
-Output: 
+Saída: 
 ```
 python3 list_words.py
 zero
-one
-two
-three
-four
+um
+dois
+três
+quatro
 ```
 
-This next example is using a for loop to iterating over a string. Remember a string is a sequence like a list. Each character has a position. Look back at "Extracting a Substring, or Slicing" in the [Strings](#strings) section to see other ways that strings can be treated like lists.
+Esse próximo exemplo é utilizando um for loop para interagir em uma corda. Lembre-se que uma corda é uma sequência como uma lista. Cada caractere possui uma posição. Olhe novamente em "Extraindo uma subcorda, ou Recortando" na seção [Cordas](#strings) para ver outras formas em que cordas podem ser tratadas como listas.
 
-Code:
+Código:
 ```python
 #!/usr/bin/env python3
 
@@ -1986,7 +1986,7 @@ for nt in dna:
   print(nt)
 ```
 
-Output:
+Saída:
 ```
 $ python3 for_string.py
 G
@@ -1999,12 +1999,12 @@ T
 ...
 ...
 ```
-> This is an easy way to access each character in a string. It is especially nice for DNA sequences.
+> Essa é uma forma fácil de acessar cada caractere em uma corda. É especialmente bom para sequências de DNA.
 
 
-Another example of iterating over a list of variables, this time numbers.
+Outro exemplo de interagir em uma lista de variáveis, estes números de tempo.
 
-Code:
+Código:
 ```python
 #!/usr/bin/env python3
 
@@ -2013,7 +2013,7 @@ for num in numbers:
   print(num)
 ```
 
-Output:
+Saída:
 ```
 $ python3 list_numbers.py
 0
@@ -2023,7 +2023,7 @@ $ python3 list_numbers.py
 4
 ```
 
-Python has a function called `range()` that will return numbers that can be converted to a list. 
+Python tem uma função chamada `range()` que retornará números que podem ser convertidos em lista. 
 ```python
 >>> range(5)
 range(0, 5)
@@ -2031,9 +2031,9 @@ range(0, 5)
 [0, 1, 2, 3, 4]
 ```
 
-The function `range()` can be used in conjunction with a for loop to iterate over a range of numbers. Range also starts at 0 and thinks about the gaps between the numbers.  
+A função `range()` pode ser utilizada em conjunto com um for loop para interar em um alcance de números. Alcance também começa com 0 e pensa sobre os espaços entre os números.  
 
-Code:
+Código:
 ```python
 #!/usr/bin/env python3
 
@@ -2041,7 +2041,7 @@ for num in range(5):
   print(num)
 ```
 
-Output:
+Saída:
 ```
 $ python list_range.py
 0
@@ -2050,12 +2050,12 @@ $ python list_range.py
 3
 4
 ```
-> As you can see this is the same output as using the list `numbers = [0, 1, 2, 3, 4]`
-> And this has the same functionality as a while loop with a condition of `count = 0` ; `count < 5`.
+> Como pode ver esta é a mesma saída que quando utilizamos a lista `numbers = [0, 1, 2, 3, 4]`
+> E esse tem a mesma funcionalidade que um while loop com a condição `count = 0` ; `count < 5`.
 
-This is the equivalent while loop
+Esse é o while loop equivalente
 
-Code:
+Código:
 ```python
 count = 0
 while count < 5:
@@ -2063,7 +2063,7 @@ while count < 5:
   count+=1
 ```
 
-Output:
+Saída:
 ```
 0
 1
@@ -2073,19 +2073,19 @@ Output:
 ```
 
 
-#### Loop Control
+#### Controle de loop
 
-Loop control statements allow for altering the normal flow of execution. 
+As declarações de controle de loop permitem alteração no fluxo normal de execução. 
 
-| Control Statement | Description                              |
+| Declaração de controle | Descrição                             |
 | ----------------- | ---------------------------------------- |
-| `break`           | A loop is terminated when a break statement is executed. All the lines of code after the break, but within the loop block are not executed. No more iteration of the loop are preformed |
-| `continue`        | A single iteration of a loop is terminated when a continue statement is executed. The next iteration will proceed normally. |
+| `break`           | Um loop é terminado quando uma declaração break é executada. Todas as linhas de código após o break, mas dentro do bloco de loop não são executadas. Sem mais interações do loop performando |
+| `continue`        | Uma única interação de uma loop é terminada quando a declaração continue é executada. A próxima interação vai proceder normalmente. |
 
 
-#### Loop Control: Break  
+#### Controle de loop: Break  
 
-Code:
+Código:
 ```python
 #!/usr/bin/env python3
 
@@ -2098,7 +2098,7 @@ while count < 5:
 print("Done")
 ```
 
-Output:
+Saída:
 ```
 $ python break.py
 count: 0
@@ -2106,11 +2106,11 @@ count: 1
 count: 2
 Done
 ```
-> when the count is equal to 3, the execution of the while loop is terminated, even though the initial condition (count < 5) is still True.
+> Quando a contagem é igual a 3, a execução do while loop é terminada, no entanto a condição inicial permanece verdadeira (count < 5).
 
-#### Loop Control: Continue
+#### Controle de loop: Continue
 
-Code:
+Código:
 ```python
 #!/usr/bin/env python3
 
@@ -2124,7 +2124,7 @@ while count < 5:
 print("Done")
 ```
 
-Output:
+Saída:
 ```
 $ python continue.py
 count: 0
@@ -2138,11 +2138,11 @@ count: 4
 line after our continue
 Done
 ```
-> When the count is equal to 3 the continue is executed. This causes all the lines within the loop block to be skipped. "line after our continue" is not printed when count is equal to 3. The next loop is executed normally.
+> Quando a contagem é igual a 3 o continue é executado. Isso faz com que todas as linhas contendo o bloco de loop sejam puladas. "Linha após o nosso continue" não é impresso quando a contagem é igual a 3. O próximo loop é executado normalmente.
 
-#### Iterators
+#### Iteradores
 
-An iterable is any data type that is can be iterated over, or can be used in iteration. An iterable can be made into an iterator with the `iter()` function. This means you can use the `next()` function.
+Um iterável é qualquer tipo de dado que pode ser interado, ou pode ser usado em uma interação. Um interável pode ser transformado em um interador com a função `iter()`. Isso significa que você pode utilizar a função `next()`.
 
 ```python
 >>> codons = [ 'atg' , 'aaa' , 'agg' ]
@@ -2158,9 +2158,9 @@ Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
 StopIteration
 ```
-> An iterator allows you to get the next element in the iterator until there are no more elements. If you want to go through each element again, you will need to redefine the iterator.
+> Um interador permite que você obtenha o próximo elemento no interador até que não existam mais elementos. Se você quer ir através de cada elemento novamente, você precisará redefinir o interador.
 
-Example of using an iterator in a for loop:
+Exemplo de utilização de um interador em um for loop:
 ```python
 codons = [ 'atg' , 'aaa' , 'agg' ]
 >>> codons_it = iter(codons)
@@ -2171,21 +2171,21 @@ atg
 aaa
 agg
 ```
-> This is nice if you have a large large large list that you don't want to keep in memory. An iterator allows you to go through each element but not keep the entire list in memory. Without iterators the entire list is in memory.
+> Isso é bom se você tem uma lista muito larga que você não deseja manter na memória. Um interador permite que você vá através de cada elemento mas sem manter a lista completa na memória. Sem interadores toda a lista permanece na memória.
 
 
-#### List Comprehension
+#### Compreensão de lista
 
-List comprehension is a way to make a list without typing out each element. There are many many ways to use list comprehension to generate lists. Some are quite complex, yet useful. 
+Compreensão de lista é uma forma de fazer uma lista sem digitar cada elemento. Existem muitas formas de usar compreensão de lista para gerar listas. Alguns são relativamente complexos, mas úteis. 
 
-Here is an simple example:
+Aqui está um exemplo fácil:
 ```python
 >>> dna_list = ['TAGC', 'ACGTATGC', 'ATG', 'ACGGCTAG']
 >>> lengths = [len(dna) for dna in dna_list]
 >>> lengths
 [4, 8, 3, 8]
 ```
-This is how you could do the same with a for loop:
+Isso é como você pode fazer o mesmo com um for loop:
 ```python
 >>> lengths = []
 >>> dna_list = ['TAGC', 'ACGTATGC', 'ATG', 'ACGGCTAG']
@@ -2196,24 +2196,24 @@ This is how you could do the same with a for loop:
 [4, 8, 3, 8]
 ```
 
-Using conditions:
+Utilizando condições:
 
-This will only return the length of an element that starts with 'A':
+Isso vai apenas retornar o comprimento de um elemento que começa com 'A':
 ```python
 >>> dna_list = ['TAGC', 'ACGTATGC', 'ATG', 'ACGGCTAG']
 >>> lengths = [len(dna) for dna in dna_list if dna.startswith('A')]
 >>> lengths
 [8, 3, 8]
 ```
-> This generates the following list: [8, 3, 8]
+> Esse gera a seguinte lista: [8, 3, 8]
 
-Here is an example of using mathematical operators to generate a list:
+Aqui está um exemplo de utilização de operadores matemáticos para gerar uma lista:
 ```python
 >>> two_power_list = [2 ** x for x in range(10)]
 >>> two_power_list
 [1, 2, 4, 8, 16, 32, 64, 128, 256, 512]
 ```
-> This creates a list of the of the product of [2^0 , 2^1, 2^2, 2^3, 2^4, 2^5, 2^6, 2^7, 2^8, 2^9 ]
+> Isso cria uma lista do produto de [2^0 , 2^1, 2^2, 2^3, 2^4, 2^5, 2^6, 2^7, 2^8, 2^9 ]
 
 ---
 
